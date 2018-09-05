@@ -106,6 +106,7 @@ public class Markise extends GameEntity implements View, Controller {
 				.when("Ausgefahren").then("FährtEin").on("up")
 				.when("Ausgefahren").then("FährtEin").condition(regenSensor::esRegnet)
 				
+				.stay("FährtEin").on("up")
 				.when("FährtEin").then("Eingefahren").condition(positionsSensor::inStartPosition)
 				.when("FährtEin").then("Gestoppt").on("stop")
 				.when("FährtEin").then("FährtAus").on("down")

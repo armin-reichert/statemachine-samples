@@ -1,12 +1,11 @@
 package de.amr.schule.markise;
 
 import java.awt.Rectangle;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.HashMap;
 import java.util.Map;
 
 import de.amr.easy.game.entity.GameEntityUsingSprites;
+import de.amr.easy.game.input.Mouse;
 import de.amr.easy.game.sprite.Sprite;
 
 public class Fernbedienung extends GameEntityUsingSprites {
@@ -24,13 +23,6 @@ public class Fernbedienung extends GameEntityUsingSprites {
 
 	public Fernbedienung(MarkiseApp app, Markise markise) {
 		this.markise = markise;
-		app.getShell().getCanvas().addMouseListener(new MouseAdapter() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				handleClick(e.getX(), e.getY());
-			}
-		});
 		setSprite("s_remote", Sprite.ofAssets("remotecontrol.jpg"));
 		setSelectedSprite("s_remote");
 		tf.setWidth(getSelectedSprite().getWidth());
@@ -39,6 +31,9 @@ public class Fernbedienung extends GameEntityUsingSprites {
 
 	@Override
 	public void update() {
+		if (Mouse.clicked()) {
+			handleClick(Mouse.getX(), Mouse.getY());
+		}
 		if (event != null) {
 			markise.raiseEvent(event);
 			event = null;
