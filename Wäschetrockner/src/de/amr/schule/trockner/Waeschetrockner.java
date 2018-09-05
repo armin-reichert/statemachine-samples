@@ -1,7 +1,7 @@
 package de.amr.schule.trockner;
 
-import static de.amr.easy.game.Application.CLOCK;
 import static de.amr.easy.game.Application.LOGGER;
+import static de.amr.easy.game.Application.app;
 
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -47,7 +47,7 @@ public class Waeschetrockner extends GameEntityUsingSprites {
 		.states()
 			.state("Aus")
 			.state("Bereit")
-			.state("Läuft").timeoutAfter(() -> CLOCK.sec(zeitwahl.getState()))
+			.state("Läuft").timeoutAfter(() -> app().clock.sec(zeitwahl.getState()))
 				
 		.transitions()
 			.when("Aus").then("Bereit").on("EinAusTaste")
@@ -104,7 +104,7 @@ public class Waeschetrockner extends GameEntityUsingSprites {
 	@Override
 	public void init() {
 		Stream.of(steuerung, tür, zeitwahl).forEach(automat -> {
-			automat.traceTo(LOGGER, CLOCK::getFrequency);
+			automat.traceTo(LOGGER, app().clock::getFrequency);
 			automat.init();
 		});
 	}

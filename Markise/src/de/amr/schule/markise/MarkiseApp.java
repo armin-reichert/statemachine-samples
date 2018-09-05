@@ -15,7 +15,7 @@ public class MarkiseApp extends Application {
 		settings.width = 800;
 		settings.height = 600;
 		settings.bgColor = Color.WHITE;
-		CLOCK.setFrequency(5);
+		clock.setFrequency(5);
 	}
 
 	@Override

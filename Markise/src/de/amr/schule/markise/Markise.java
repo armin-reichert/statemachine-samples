@@ -1,7 +1,7 @@
 package de.amr.schule.markise;
 
-import static de.amr.easy.game.Application.CLOCK;
 import static de.amr.easy.game.Application.LOGGER;
+import static de.amr.easy.game.Application.app;
 import static java.lang.String.format;
 
 import java.awt.Color;
@@ -118,7 +118,7 @@ public class Markise extends GameEntity implements View, Controller {
 		.endStateMachine();
 		//@formatter:on
 
-		automat.traceTo(LOGGER, CLOCK::getFrequency);
+		automat.traceTo(LOGGER, app().clock::getFrequency);
 	}
 
 	public void raiseEvent(String event) {

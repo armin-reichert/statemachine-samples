@@ -1,5 +1,7 @@
 package de.amr.schule.ampel;
 
+import static de.amr.easy.game.Application.app;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -45,7 +47,7 @@ public class Ampel extends GameEntity implements View {
 
 	@Override
 	public void init() {
-		automat.traceTo(Application.LOGGER, Application.CLOCK::getFrequency);
+		automat.traceTo(Application.LOGGER, app().clock::getFrequency);
 		automat.init();
 	}
 

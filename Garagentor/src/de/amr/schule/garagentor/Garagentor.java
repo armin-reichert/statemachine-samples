@@ -14,7 +14,6 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
-import de.amr.easy.game.Application;
 import de.amr.easy.game.entity.GameEntity;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.view.Controller;
@@ -50,7 +49,7 @@ public class Garagentor extends GameEntity implements View, Controller {
 		.states()
 		
 				.state(GESCHLOSSEN)
-						.timeoutAfter(() -> Application.CLOCK.sec(5))
+						.timeoutAfter(() -> app.clock.sec(5))
 						.onEntry(() -> lichtAn())
 						.onExit(() -> lichtAus())
 				

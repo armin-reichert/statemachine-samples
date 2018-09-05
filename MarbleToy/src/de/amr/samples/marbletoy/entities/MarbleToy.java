@@ -1,7 +1,7 @@
 package de.amr.samples.marbletoy.entities;
 
-import static de.amr.easy.game.Application.CLOCK;
 import static de.amr.easy.game.Application.LOGGER;
+import static de.amr.easy.game.Application.app;
 import static de.amr.samples.marbletoy.router.RoutingPoint.C;
 import static de.amr.samples.marbletoy.router.RoutingPoint.D;
 import static de.amr.samples.marbletoy.router.RoutingPoint.E;
@@ -44,12 +44,12 @@ public class MarbleToy extends GameEntityUsingSprites {
 		levers[1] = new Lever(424, 82);
 		levers[2] = new Lever(301, 204);
 		router = new MarbleRouter(this);
-		router.getFsm().traceTo(LOGGER, CLOCK::getFrequency);
+		router.getFsm().traceTo(LOGGER, app().clock::getFrequency);
 	}
 
 	public void setLeverControl(LeverControl leverControl) {
 		this.leverControl = leverControl;
-		leverControl.getFsm().traceTo(LOGGER, CLOCK::getFrequency);
+		leverControl.getFsm().traceTo(LOGGER, app().clock::getFrequency);
 	}
 
 	@Override
