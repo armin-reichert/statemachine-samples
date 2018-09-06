@@ -1,13 +1,14 @@
-package de.amr.schule.garagentor;
+package de.amr.samples.statemachine.garagentor;
 
-import static de.amr.schule.garagentor.Garagentor.TorEreignis.FB_GEDRÜCKT;
-import static de.amr.schule.garagentor.Garagentor.TorEreignis.SCHALTER_GEDRÜCKT;
-import static de.amr.schule.garagentor.Garagentor.TorZustand.GESCHLOSSEN;
-import static de.amr.schule.garagentor.Garagentor.TorZustand.GESTOPPT_BEIM_SCHLIESSEN;
-import static de.amr.schule.garagentor.Garagentor.TorZustand.GESTOPPT_BEIM_ÖFFNEN;
-import static de.amr.schule.garagentor.Garagentor.TorZustand.OFFEN;
-import static de.amr.schule.garagentor.Garagentor.TorZustand.SCHLIESST;
-import static de.amr.schule.garagentor.Garagentor.TorZustand.ÖFFNET;
+import static de.amr.easy.game.Application.app;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorEreignis.FB_GEDRÜCKT;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorEreignis.SCHALTER_GEDRÜCKT;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorZustand.GESCHLOSSEN;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorZustand.GESTOPPT_BEIM_SCHLIESSEN;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorZustand.GESTOPPT_BEIM_ÖFFNEN;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorZustand.OFFEN;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorZustand.SCHLIESST;
+import static de.amr.samples.statemachine.garagentor.Garagentor.TorZustand.ÖFFNET;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -16,12 +17,11 @@ import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.entity.GameEntity;
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Controller;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.Match;
 import de.amr.statemachine.StateMachine;
 
-public class Garagentor extends GameEntity implements View, Controller {
+public class Garagentor extends GameEntity implements View {
 
 	public enum TorZustand {
 		GESCHLOSSEN, ÖFFNET, OFFEN, GESTOPPT_BEIM_ÖFFNEN, SCHLIESST, GESTOPPT_BEIM_SCHLIESSEN
@@ -31,25 +31,21 @@ public class Garagentor extends GameEntity implements View, Controller {
 		SCHALTER_GEDRÜCKT, FB_GEDRÜCKT,
 	}
 
-	private GaragentorApp app;
-	private StateMachine<TorZustand, TorEreignis> automat;
+	private StateMachine<TorZustand, TorEreignis> steuerung;
 	private int position;
 	private boolean hindernis;
 	private boolean lichtBrennt;
 
-	public Garagentor(GaragentorApp app) {
-
-		this.app = app;
-
+	public Garagentor() {
 		//@formatter:off
-		automat = StateMachine.define(TorZustand.class, TorEreignis.class, Match.BY_EQUALITY)
+		steuerung = StateMachine.define(TorZustand.class, TorEreignis.class, Match.BY_EQUALITY)
 				.description("Garagentor Steuerung")
 				.initialState(GESCHLOSSEN)
 
 		.states()
 		
 				.state(GESCHLOSSEN)
-						.timeoutAfter(() -> app.clock.sec(5))
+						.timeoutAfter(() -> app().clock.sec(5))
 						.onEntry(() -> lichtAn())
 						.onExit(() -> lichtAus())
 				
@@ -89,48 +85,25 @@ public class Garagentor extends GameEntity implements View, Controller {
 		//@formatter:on
 	}
 
-	public int getWidth() {
-		return 800;
-	}
-
-	public int getHeight() {
-		return 600;
-	}
-
 	@Override
 	public void init() {
-		automat.init();
+		steuerung.init();
 	}
 
 	@Override
 	public void update() {
 		if (Keyboard.keyPressedOnce(KeyEvent.VK_SPACE)) {
-			automat.enqueue(SCHALTER_GEDRÜCKT);
+			steuerung.enqueue(SCHALTER_GEDRÜCKT);
 		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_F)) {
-			automat.enqueue(FB_GEDRÜCKT);
+			steuerung.enqueue(FB_GEDRÜCKT);
 		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_H)) {
-			if (automat.getState() == GESCHLOSSEN && !hindernis) {
+			if (steuerung.getState() == GESCHLOSSEN && !hindernis) {
 				// Hindernis nicht einschalten
 			} else {
 				hindernis = !hindernis;
 			}
 		}
-		automat.update();
-	}
-
-	@Override
-	public void draw(Graphics2D g) {
-		g.translate(tf.getX(), tf.getY());
-		g.setColor(Color.BLUE);
-		int w = position * app.settings.width / 100;
-		g.fillRect(0, 0, w, 20);
-		g.translate(-tf.getX(), -tf.getY());
-
-		g.translate(tf.getX(), tf.getY() + 40);
-		g.setFont(new Font("Monospaced", Font.BOLD, 20));
-		g.drawString(String.format("Position: %d, Zustand: %s, Hindernis: %s, %s", position, automat.getState(),
-				hindernis ? "Ja" : "Nein", lichtBrennt ? "Licht brennt" : ""), 0, 0);
-		g.translate(-tf.getX(), -tf.getY());
+		steuerung.update();
 	}
 
 	private boolean endPunktErreicht() {
@@ -151,5 +124,20 @@ public class Garagentor extends GameEntity implements View, Controller {
 
 	private void lichtAus() {
 		lichtBrennt = false;
+	}
+
+	@Override
+	public void draw(Graphics2D g) {
+		g.translate(tf.getX(), tf.getY());
+		g.setColor(Color.BLUE);
+		int w = position * tf.getWidth() / 100;
+		g.fillRect(0, 0, w, 20);
+		g.translate(-tf.getX(), -tf.getY());
+	
+		g.translate(tf.getX(), tf.getY() + 40);
+		g.setFont(new Font("Monospaced", Font.BOLD, 20));
+		g.drawString(String.format("Position: %d, Zustand: %s, Hindernis: %s, %s", position, steuerung.getState(),
+				hindernis ? "Ja" : "Nein", lichtBrennt ? "Licht brennt" : ""), 0, 0);
+		g.translate(-tf.getX(), -tf.getY());
 	}
 }

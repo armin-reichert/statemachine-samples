@@ -1,4 +1,4 @@
-package de.amr.schule.garagentor;
+package de.amr.samples.statemachine.garagentor;
 
 import java.awt.Color;
 
@@ -25,6 +25,10 @@ public class GaragentorApp extends Application {
 
 	@Override
 	public void init() {
-		setController(new GaragentorScene(this));
+		Garagentor tor = new Garagentor();
+		tor.tf.setWidth(settings.width);
+		tor.tf.setHeight(100);
+		tor.tf.setY(settings.height - 100);
+		setController(tor);
 	}
 }
