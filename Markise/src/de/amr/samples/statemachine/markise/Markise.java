@@ -1,4 +1,4 @@
-package de.amr.schule.markise;
+package de.amr.samples.statemachine.markise;
 
 import static de.amr.easy.game.Application.LOGGER;
 import static de.amr.easy.game.Application.app;
@@ -23,18 +23,14 @@ import de.amr.statemachine.StateMachine;
  */
 public class Markise extends GameEntity implements View, Controller {
 
-	private final MarkiseApp app;
 	private final Motor motor;
 	private final PositionsSensor positionsSensor;
 	private final RegenSensor regenSensor;
 	private final WindSensor windSensor;
 	private final StateMachine<String, String> automat;
-
 	private int position;
 
-	public Markise(MarkiseApp app) {
-		this.app = app;
-
+	public Markise() {
 		// Aktoren
 		motor = new Motor(this);
 
@@ -156,14 +152,14 @@ public class Markise extends GameEntity implements View, Controller {
 		// Balken zum Anzeigen der Ausfahrposition
 		g.translate(tf.getX(), tf.getY());
 		g.setColor(Color.BLUE);
-		g.fillRect(0, 0, Math.round(position / 100f * app.settings.width), 30);
+		g.fillRect(0, 0, Math.round(position / 100f * tf.getWidth()), 30);
 		g.translate(-tf.getX(), -tf.getY());
 
 		// Statustext
 		g.translate(tf.getX(), tf.getY() + 80);
 		g.setFont(new Font("Monospaced", Font.BOLD, 16));
 		g.drawString(format("Wetter: %s %s  Geschw: %.1f  Position: %d%%  Zustand: %s",
-				regenSensor.esRegnet() ? "Regen" : "Sonnenschein", windSensor.esIstWindig() ? "Windig" : "Windstill",
+				regenSensor.esRegnet() ? "Regen" : "Sonnenschein", windSensor.windig() ? "Windig" : "Windstill",
 				tf.getVelocityX(), position, automat.getState()), 0, 0);
 		g.translate(-tf.getX(), -(tf.getY() + 80));
 	}

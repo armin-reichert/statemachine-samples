@@ -1,4 +1,4 @@
-package de.amr.schule.markise;
+package de.amr.samples.statemachine.markise;
 
 import java.awt.Rectangle;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ public class Fernbedienung extends GameEntityUsingSprites {
 	private final Markise markise;
 	private String event;
 
-	public Fernbedienung(MarkiseApp app, Markise markise) {
+	public Fernbedienung(Markise markise) {
 		this.markise = markise;
 		setSprite("s_remote", Sprite.ofAssets("remotecontrol.jpg"));
 		setSelectedSprite("s_remote");

@@ -1,4 +1,4 @@
-package de.amr.schule.markise;
+package de.amr.samples.statemachine.markise;
 
 import java.awt.event.KeyEvent;
 

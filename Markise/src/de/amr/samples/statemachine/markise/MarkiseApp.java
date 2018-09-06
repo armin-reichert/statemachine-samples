@@ -1,4 +1,4 @@
-package de.amr.schule.markise;
+package de.amr.samples.statemachine.markise;
 
 import java.awt.Color;
 
@@ -20,6 +20,6 @@ public class MarkiseApp extends Application {
 
 	@Override
 	public void init() {
-		setController(new MarkiseScene(this));
+		setController(new MarkiseUI());
 	}
 }

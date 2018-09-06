@@ -1,4 +1,4 @@
-package de.amr.schule.markise;
+package de.amr.samples.statemachine.markise;
 
 import java.awt.event.KeyEvent;
 
@@ -9,7 +9,7 @@ public class WindSensor implements Controller {
 
 	private float windSpeed;
 
-	public boolean esIstWindig() {
+	public boolean windig() {
 		return windSpeed > 10;
 	}
 
