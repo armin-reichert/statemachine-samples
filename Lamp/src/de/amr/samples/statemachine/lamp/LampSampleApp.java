@@ -1,4 +1,4 @@
-package de.amr.samples.fsm.lamp;
+package de.amr.samples.statemachine.lamp;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,6 +22,7 @@ public class LampSampleApp {
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.add(view, BorderLayout.CENTER);
 		frame.pack();
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		StateMachine<Boolean, Boolean> controller = StateMachine.define(Boolean.class, Boolean.class, Match.BY_EQUALITY)
 		//@formatter:off
