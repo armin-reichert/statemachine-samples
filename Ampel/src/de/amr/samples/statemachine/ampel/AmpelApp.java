@@ -1,4 +1,4 @@
-package de.amr.schule.ampel;
+package de.amr.samples.statemachine.ampel;
 
 import de.amr.easy.game.Application;
 
@@ -15,12 +15,15 @@ public class AmpelApp extends Application {
 
 	public AmpelApp() {
 		settings.title = "Ampel Simulation";
-		settings.height = 600;
-		settings.width = 600;
+		settings.width = 150;
+		settings.height = 450;
 	}
 
 	@Override
 	public void init() {
-		setController(new AmpelScene(600,600));
+		Ampel ampel = new Ampel();
+		ampel.tf.setWidth(settings.width);
+		ampel.tf.setHeight(settings.height);
+		setController(ampel);
 	}
 }
