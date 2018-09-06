@@ -1,23 +1,32 @@
 package de.amr.schule.mathebiber2012;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import de.amr.statemachine.Match;
 import de.amr.statemachine.StateMachine;
 
-public class Bebrocarina {
+/**
+ * @see https://bwinf.de/fileadmin/user_upload/Legacy/informatik-biber/uploads/media/Informatik-Biber_2012_Web_01032013_mitLoesungen.pdf
+ */
+public class Bebrocarina extends StateMachine<Integer, Character> {
 
 	public static void main(String[] args) {
-		Bebrocarina acceptor = new Bebrocarina();
-		acceptor.prüfeObSpielbar("+ooo+ooo+ooo+ooo+");
-		acceptor.prüfeObSpielbar("---o+-o--ooo+");
-		acceptor.prüfeObSpielbar("-----o+++++o-----");
-		acceptor.prüfeObSpielbar("--+--+--o-+--");
+		Bebrocarina bc = new Bebrocarina();
+		Logger logger = Logger.getLogger("Bebrocarina");
+		bc.traceTo(logger, () -> 0);
+		logger.setLevel(Level.OFF);
+
+		bc.prüfeObSpielbar("+ooo+ooo+ooo+ooo+");
+		bc.prüfeObSpielbar("---o+-o--ooo+");
+		bc.prüfeObSpielbar("-----o+++++o-----");
+		bc.prüfeObSpielbar("--+--+--o-+--");
 	}
 
-	private final StateMachine<Integer, Character> scanner;
-
 	public Bebrocarina() {
+		super(Integer.class, Match.BY_EQUALITY);
 		//@formatter:off
-		scanner = StateMachine.define(Integer.class, Character.class, Match.BY_EQUALITY)
+		define()
 			.description("Bebrocarina")
 			.initialState(1)
 
@@ -66,15 +75,25 @@ public class Bebrocarina {
 	}
 
 	void prüfeObSpielbar(String wort) {
-		scanner.init();
+		boolean spielbar = false;
+		for (int startZustand = 1; startZustand <= 6; ++startZustand) {
+			boolean ok = istSpielbar(startZustand, wort);
+			if (ok) {
+				spielbar = true;
+				System.out.println(String.format("%s ist spielbar aus Zustand %d", wort, startZustand));
+			}
+		}
+		if (!spielbar) {
+			System.out.println(String.format("%s ist nicht spielbar", wort));
+		}
+	}
+
+	boolean istSpielbar(int startZustand, String wort) {
+		setState(startZustand);
 		for (int i = 0; i < wort.length(); ++i) {
-			scanner.enqueue(wort.charAt(i));
-			scanner.update();
+			enqueue(wort.charAt(i));
+			update();
 		}
-		if (scanner.getState() != -1) {
-			System.out.println(wort + ": spielbar");
-			return;
-		}
-		System.out.println(wort + ": nicht spielbar");
+		return getState() != -1;
 	}
 }
