@@ -35,8 +35,8 @@ public class WaeschetrocknerUI implements View, Controller {
 		maschine.draw(g);
 		g.setColor(Color.white);
 		g.setFont(new Font("Sans", Font.PLAIN, 30));
-		float remainingTime = maschine.steuerung.getRemainingTicks();
-		if (maschine.steuerung.getRemainingTicks() != State.ENDLESS) {
+		float remainingTime = maschine.steuerung.getTicksRemaining();
+		if (maschine.steuerung.getTicksRemaining() != State.ENDLESS) {
 			float sec = remainingTime / app().clock.getFrequency();
 			String text = String.format("Trockner: %s, Tür: %s, Zeit %s (noch %.1f s)",
 					maschine.steuerung.getState(), maschine.tür.getState(), maschine.zeitwahl.getState(), sec);
