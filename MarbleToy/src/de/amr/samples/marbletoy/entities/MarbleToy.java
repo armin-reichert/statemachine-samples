@@ -36,8 +36,8 @@ public class MarbleToy extends GameEntityUsingSprites {
 	private LeverControl leverControl;
 
 	public MarbleToy() {
-		setSprite("s_toy", Sprite.of(Assets.image("toy.png")));
-		setSelectedSprite("s_toy");
+		sprites.set("s_toy", Sprite.of(Assets.image("toy.png")));
+		sprites.select("s_toy");
 		this.marble = new Marble(50);
 		marble.tf.setPosition(-marble.tf.getWidth(), -marble.tf.getHeight());
 		levers[0] = new Lever(178, 82);

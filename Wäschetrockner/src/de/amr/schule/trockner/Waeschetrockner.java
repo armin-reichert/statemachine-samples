@@ -34,8 +34,8 @@ public class Waeschetrockner extends GameEntityUsingSprites {
 	public StateMachine<Integer, String> zeitwahl;
 
 	public Waeschetrockner() {
-		setSprite("s_trockner", Sprite.ofAssets("trockner.jpg"));
-		setSelectedSprite("s_trockner");
+		sprites.set("s_trockner", Sprite.ofAssets("trockner.jpg"));
+		sprites.select("s_trockner");
 
 		// Steuerung
 

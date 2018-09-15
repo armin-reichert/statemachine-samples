@@ -23,10 +23,10 @@ public class Fernbedienung extends GameEntityUsingSprites {
 
 	public Fernbedienung(Markise markise) {
 		this.markise = markise;
-		setSprite("s_remote", Sprite.ofAssets("remotecontrol.jpg"));
-		setSelectedSprite("s_remote");
-		tf.setWidth(getSelectedSprite().getWidth());
-		tf.setHeight(getSelectedSprite().getHeight());
+		sprites.set("s_remote", Sprite.ofAssets("remotecontrol.jpg"));
+		sprites.select("s_remote");
+		tf.setWidth(sprites.current().getWidth());
+		tf.setHeight(sprites.current().getHeight());
 	}
 
 	@Override
