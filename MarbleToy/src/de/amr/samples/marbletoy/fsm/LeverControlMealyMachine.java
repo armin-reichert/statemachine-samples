@@ -27,7 +27,7 @@ public class LeverControlMealyMachine {
 
 	public LeverControlMealyMachine() {
 		//@formatter:off
-		fsm = StateMachine.define(ToyState.class, Character.class, Match.BY_EQUALITY)
+		fsm = StateMachine.beginStateMachine(ToyState.class, Character.class, Match.BY_EQUALITY)
 				.description("Marble-Toy (Mealy)")
 				.initialState(ToyState.LLL)
 				

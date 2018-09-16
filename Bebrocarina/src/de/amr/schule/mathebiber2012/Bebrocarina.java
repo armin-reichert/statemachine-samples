@@ -26,7 +26,7 @@ public class Bebrocarina extends StateMachine<Integer, Character> {
 	public Bebrocarina() {
 		super(Integer.class, Match.BY_EQUALITY);
 		//@formatter:off
-		define()
+		beginStateMachine()
 			.description("Bebrocarina")
 			.initialState(1)
 

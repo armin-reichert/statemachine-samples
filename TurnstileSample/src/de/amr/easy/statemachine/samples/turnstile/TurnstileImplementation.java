@@ -26,7 +26,7 @@ public class TurnstileImplementation extends StateMachine<TurnstileState, Turnst
 		super(TurnstileState.class, Match.BY_EQUALITY);
 		controller = c;
 		//@formatter:off
-		define()
+		beginStateMachine()
 			.description("TurnstileStateMachine")
 			.initialState(LOCKED)
 			.states()

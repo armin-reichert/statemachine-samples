@@ -24,7 +24,7 @@ public class LampSampleApp {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		StateMachine<Boolean, Boolean> controller = StateMachine.define(Boolean.class, Boolean.class, Match.BY_EQUALITY)
+		StateMachine<Boolean, Boolean> controller = StateMachine.beginStateMachine(Boolean.class, Boolean.class, Match.BY_EQUALITY)
 		//@formatter:off
 			.initialState(false)
 			.states().state(false).state(true)

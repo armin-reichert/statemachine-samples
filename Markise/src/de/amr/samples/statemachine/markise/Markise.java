@@ -42,7 +42,7 @@ public class Markise extends GameEntity implements View, Controller {
 		// Steuerung
 
 		//@formatter:off
-		automat = StateMachine.define(String.class, String.class, Match.BY_EQUALITY)
+		automat = StateMachine.beginStateMachine(String.class, String.class, Match.BY_EQUALITY)
 			.description("MarkisenSteuerung")
 			.initialState("Eingefahren")
 

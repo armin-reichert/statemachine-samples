@@ -38,7 +38,7 @@ public class Garagentor extends GameEntity implements View {
 
 	public Garagentor() {
 		//@formatter:off
-		steuerung = StateMachine.define(TorZustand.class, TorEreignis.class, Match.BY_EQUALITY)
+		steuerung = StateMachine.beginStateMachine(TorZustand.class, TorEreignis.class, Match.BY_EQUALITY)
 				.description("Garagentor Steuerung")
 				.initialState(GESCHLOSSEN)
 

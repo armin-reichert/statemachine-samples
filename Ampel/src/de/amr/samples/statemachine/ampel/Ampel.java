@@ -25,7 +25,7 @@ public class Ampel extends GameEntity implements View {
 
 	public Ampel() {
 		//@formatter:off
-		steuerung = StateMachine.define(String.class, Void.class)
+		steuerung = StateMachine.beginStateMachine(String.class, Void.class)
 		.description("Ampel")
 		.initialState("Aus")
 		.states()

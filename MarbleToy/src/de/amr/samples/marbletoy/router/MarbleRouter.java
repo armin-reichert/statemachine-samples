@@ -30,7 +30,7 @@ public class MarbleRouter {
 	public MarbleRouter(MarbleToy toy) {
 		this.toy = toy;
 		//@formatter:off
-		fsm = StateMachine.define(RoutingPoint.class, Character.class, Match.BY_EQUALITY)
+		fsm = StateMachine.beginStateMachine(RoutingPoint.class, Character.class, Match.BY_EQUALITY)
 				
 				.description("Marble Router")
 				.initialState(RoutingPoint.Initial)

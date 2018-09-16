@@ -31,7 +31,7 @@ public class LeverControl {
 
 	public LeverControl(MarbleToy toy) {
 		//@formatter:off
-		fsm = StateMachine.define(ToyState.class, Character.class, Match.BY_EQUALITY)
+		fsm = StateMachine.beginStateMachine(ToyState.class, Character.class, Match.BY_EQUALITY)
 				
 				.description("Marble Toy Lever Control")
 				.initialState(LLL)

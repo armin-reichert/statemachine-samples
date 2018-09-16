@@ -40,7 +40,7 @@ public class Waeschetrockner extends GameEntityUsingSprites {
 		// Steuerung
 
 		//@formatter:off
-		steuerung = StateMachine.define(String.class, String.class, Match.BY_EQUALITY)
+		steuerung = StateMachine.beginStateMachine(String.class, String.class, Match.BY_EQUALITY)
 			.description("Trockner")
 			.initialState("Aus")
 		
@@ -67,7 +67,7 @@ public class Waeschetrockner extends GameEntityUsingSprites {
 	
 		.endStateMachine();
 
-		tür = StateMachine.define(String.class, String.class, Match.BY_EQUALITY)
+		tür = StateMachine.beginStateMachine(String.class, String.class, Match.BY_EQUALITY)
 				.description("Tür")
 				.initialState("Zu")
 				
@@ -83,7 +83,7 @@ public class Waeschetrockner extends GameEntityUsingSprites {
 		
 		.endStateMachine();
 
-		zeitwahl = StateMachine.define(Integer.class, String.class, Match.BY_EQUALITY)
+		zeitwahl = StateMachine.beginStateMachine(Integer.class, String.class, Match.BY_EQUALITY)
 			.description("Zeitwahl")
 			.initialState(15)
 
