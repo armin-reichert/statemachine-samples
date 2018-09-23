@@ -20,7 +20,7 @@ import java.util.Random;
 
 import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.entity.GameEntityUsingSprites;
-import de.amr.easy.game.sprite.Sprite;
+import de.amr.easy.game.ui.sprites.Sprite;
 import de.amr.samples.marbletoy.fsm.LeverControl;
 import de.amr.samples.marbletoy.router.MarbleRouter;
 import de.amr.samples.marbletoy.router.RoutingPoint;

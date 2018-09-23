@@ -13,7 +13,7 @@ import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.entity.GameEntityUsingSprites;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.input.Mouse;
-import de.amr.easy.game.sprite.Sprite;
+import de.amr.easy.game.ui.sprites.Sprite;
 import de.amr.statemachine.Match;
 import de.amr.statemachine.StateMachine;
 

@@ -6,7 +6,7 @@ import java.util.Map;
 
 import de.amr.easy.game.entity.GameEntityUsingSprites;
 import de.amr.easy.game.input.Mouse;
-import de.amr.easy.game.sprite.Sprite;
+import de.amr.easy.game.ui.sprites.Sprite;
 
 public class Fernbedienung extends GameEntityUsingSprites {
 
