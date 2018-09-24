@@ -9,7 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
-import de.amr.easy.game.entity.GameEntity;
+import de.amr.easy.game.entity.AbstractGameEntity;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.StateMachine;
@@ -19,7 +19,7 @@ import de.amr.statemachine.StateMachine;
  * 
  * @author Armin Reichert & Anna Schillo
  */
-public class Ampel extends GameEntity implements View {
+public class Ampel extends AbstractGameEntity implements View {
 
 	private final StateMachine<String, Void> steuerung;
 

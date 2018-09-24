@@ -10,7 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
 import de.amr.easy.game.assets.Assets;
-import de.amr.easy.game.entity.GameEntity;
+import de.amr.easy.game.entity.AbstractGameEntity;
 import de.amr.easy.game.view.Controller;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.Match;
@@ -21,7 +21,7 @@ import de.amr.statemachine.StateMachine;
  * 
  * @author Armin Reichert & Anna u. Peter Schillo
  */
-public class Markise extends GameEntity implements View, Controller {
+public class Markise extends AbstractGameEntity implements View, Controller {
 
 	private final Motor motor;
 	private final PositionsSensor positionsSensor;

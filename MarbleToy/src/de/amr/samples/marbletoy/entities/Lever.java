@@ -4,10 +4,10 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-import de.amr.easy.game.entity.GameEntity;
+import de.amr.easy.game.entity.AbstractGameEntity;
 import de.amr.easy.game.view.View;
 
-public class Lever extends GameEntity implements View {
+public class Lever extends AbstractGameEntity implements View {
 
 	private int size = 30;
 	private int leg = size * 75 / 100;
