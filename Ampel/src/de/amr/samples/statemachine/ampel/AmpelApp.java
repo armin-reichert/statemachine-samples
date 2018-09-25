@@ -21,9 +21,7 @@ public class AmpelApp extends Application {
 
 	@Override
 	public void init() {
-		Ampel ampel = new Ampel();
-		ampel.tf.setWidth(settings.width);
-		ampel.tf.setHeight(settings.height);
+		Ampel ampel = new Ampel(settings.width, settings.height);
 		setController(ampel);
 	}
 }
