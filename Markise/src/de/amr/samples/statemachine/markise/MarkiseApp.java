@@ -7,7 +7,7 @@ import de.amr.easy.game.Application;
 public class MarkiseApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new MarkiseApp());
+		launch(new MarkiseApp(), args);
 	}
 
 	public MarkiseApp() {

@@ -12,7 +12,7 @@ import de.amr.easy.game.Application;
 public class GaragentorApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new GaragentorApp());
+		launch(new GaragentorApp(), args);
 	}
 
 	public GaragentorApp() {

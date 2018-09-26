@@ -10,7 +10,7 @@ import de.amr.easy.game.Application;
 public class AmpelApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new AmpelApp());
+		launch(new AmpelApp(), args);
 	}
 
 	public AmpelApp() {

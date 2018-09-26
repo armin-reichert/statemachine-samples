@@ -5,7 +5,7 @@ import de.amr.easy.game.Application;
 public class WaeschetrocknerApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new WaeschetrocknerApp());
+		launch(new WaeschetrocknerApp(), args);
 	}
 
 	public WaeschetrocknerApp() {

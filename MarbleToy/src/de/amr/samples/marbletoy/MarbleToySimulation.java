@@ -9,7 +9,7 @@ import de.amr.samples.marbletoy.fsm.LeverControl;
 public class MarbleToySimulation extends Application {
 
 	public static void main(String[] args) {
-		launch(new MarbleToySimulation());
+		launch(new MarbleToySimulation(), args);
 	}
 
 	public MarbleToySimulation() {
