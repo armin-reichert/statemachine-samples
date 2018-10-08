@@ -4,11 +4,11 @@ import java.awt.Rectangle;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.amr.easy.game.entity.SpriteBasedGameEntity;
+import de.amr.easy.game.entity.SpriteEntity;
 import de.amr.easy.game.input.Mouse;
 import de.amr.easy.game.ui.sprites.Sprite;
 
-public class Fernbedienung extends SpriteBasedGameEntity {
+public class Fernbedienung extends SpriteEntity {
 
 	private static final Map<String, Rectangle> BUTTONS = new HashMap<>();
 

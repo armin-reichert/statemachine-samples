@@ -19,13 +19,14 @@ import java.util.EnumSet;
 import java.util.Random;
 
 import de.amr.easy.game.assets.Assets;
-import de.amr.easy.game.entity.SpriteBasedGameEntity;
+import de.amr.easy.game.entity.SpriteEntity;
 import de.amr.easy.game.ui.sprites.Sprite;
+import de.amr.easy.game.view.Controller;
 import de.amr.samples.marbletoy.fsm.LeverControl;
 import de.amr.samples.marbletoy.router.MarbleRouter;
 import de.amr.samples.marbletoy.router.RoutingPoint;
 
-public class MarbleToy extends SpriteBasedGameEntity {
+public class MarbleToy extends SpriteEntity implements Controller {
 
 	private static final Font LABEL_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 18);
 

@@ -15,13 +15,14 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
-import de.amr.easy.game.entity.AbstractGameEntity;
+import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Keyboard;
+import de.amr.easy.game.view.Controller;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.Match;
 import de.amr.statemachine.StateMachine;
 
-public class Garagentor extends AbstractGameEntity implements View {
+public class Garagentor extends Entity implements View, Controller {
 
 	public enum TorZustand {
 		GESCHLOSSEN, ÖFFNET, OFFEN, GESTOPPT_BEIM_ÖFFNEN, SCHLIESST, GESTOPPT_BEIM_SCHLIESSEN
