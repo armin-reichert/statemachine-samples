@@ -1,34 +1,34 @@
 package de.amr.samples.statemachine.ampel;
 
 import static de.amr.easy.game.Application.app;
-import static de.amr.samples.statemachine.ampel.Ampel.Light.GREEN;
-import static de.amr.samples.statemachine.ampel.Ampel.Light.OFF;
-import static de.amr.samples.statemachine.ampel.Ampel.Light.RED;
-import static de.amr.samples.statemachine.ampel.Ampel.Light.YELLOW;
+import static de.amr.samples.statemachine.ampel.TrafficLight.Light.GREEN;
+import static de.amr.samples.statemachine.ampel.TrafficLight.Light.OFF;
+import static de.amr.samples.statemachine.ampel.TrafficLight.Light.RED;
+import static de.amr.samples.statemachine.ampel.TrafficLight.Light.YELLOW;
 
 import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.view.Controller;
-import de.amr.samples.statemachine.ampel.Ampel.Light;
+import de.amr.samples.statemachine.ampel.TrafficLight.Light;
 import de.amr.statemachine.StateMachine;
 
 /**
- * Die Ampel.
+ * A simple traffic light.
  * 
  * @author Armin Reichert & Anna Schillo
  */
-public class Ampel extends StateMachine<Light, Void> implements Controller {
+public class TrafficLight extends StateMachine<Light, Void> implements Controller {
 
 	public enum Light {
 		OFF, RED, YELLOW, GREEN;
 	}
 
-	public Ampel() {
+	public TrafficLight() {
 		//@formatter:off
 		super(Light.class);
 		beginStateMachine()
-			.description("Ampel")
+			.description("Traffic Light")
 			.initialState(OFF)
 			.states()
 				.state(OFF)

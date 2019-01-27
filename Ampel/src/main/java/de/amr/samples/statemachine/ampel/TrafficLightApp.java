@@ -3,27 +3,27 @@ package de.amr.samples.statemachine.ampel;
 import de.amr.easy.game.Application;
 
 /**
- * Simuliert eine Ampel mithilfe eines Zustandsautomaten.
+ * Simple traffic light simulation using finite state machine.
  * 
  * @author Armin Reichert & Anna Schillo
  */
-public class AmpelApp extends Application {
+public class TrafficLightApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new AmpelApp(), args);
+		launch(new TrafficLightApp(), args);
 	}
 
-	public AmpelApp() {
-		settings.title = "Ampel Simulation";
+	public TrafficLightApp() {
+		settings.title = "Traffic Light Simulation";
 		settings.width = 150;
 		settings.height = 450;
 	}
 
 	@Override
 	public void init() {
-		Ampel ampel = new Ampel();
+		TrafficLight ampel = new TrafficLight();
 		ampel.traceTo(LOGGER, clock::getFrequency);
-		AmpelUI viewController = new AmpelUI(settings.width, settings.height);
+		TrafficLightUI viewController = new TrafficLightUI(settings.width, settings.height);
 		viewController.setAmpel(ampel);
 		setController(viewController);
 	}

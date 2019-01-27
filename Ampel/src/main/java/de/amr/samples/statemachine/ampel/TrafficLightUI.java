@@ -8,19 +8,19 @@ import java.awt.RenderingHints;
 import de.amr.easy.game.view.View;
 import de.amr.easy.game.view.ViewController;
 
-public class AmpelUI implements View, ViewController {
+public class TrafficLightUI implements View, ViewController {
 
 	private final int width;
 	private final int height;
-	private Ampel ampel;
+	private TrafficLight trafficLight;
 
-	public AmpelUI(int width, int height) {
+	public TrafficLightUI(int width, int height) {
 		this.width = width;
 		this.height = height;
 	}
 
-	public void setAmpel(Ampel ampel) {
-		this.ampel = ampel;
+	public void setAmpel(TrafficLight trafficLight) {
+		this.trafficLight = trafficLight;
 	}
 
 	@Override
@@ -30,15 +30,15 @@ public class AmpelUI implements View, ViewController {
 
 	@Override
 	public void init() {
-		if (ampel != null) {
-			ampel.init();
+		if (trafficLight != null) {
+			trafficLight.init();
 		}
 	}
 
 	@Override
 	public void update() {
-		if (ampel != null) {
-			ampel.update();
+		if (trafficLight != null) {
+			trafficLight.update();
 		}
 	}
 
@@ -48,7 +48,7 @@ public class AmpelUI implements View, ViewController {
 		g.setColor(Color.LIGHT_GRAY);
 		g.fillRect(0, 0, width, height);
 
-		if (ampel == null) {
+		if (trafficLight == null) {
 			return;
 		}
 
@@ -58,17 +58,17 @@ public class AmpelUI implements View, ViewController {
 
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		g.setColor(ampel.getState().equals(Ampel.Light.RED) ? Color.RED : Color.BLACK);
+		g.setColor(trafficLight.getState().equals(TrafficLight.Light.RED) ? Color.RED : Color.BLACK);
 		g.fillOval(inset, inset, diameter, diameter);
 		g.setColor(Color.BLACK);
 		g.drawOval(inset, inset, diameter, diameter);
 
-		g.setColor(ampel.getState().equals(Ampel.Light.YELLOW) ? Color.YELLOW : Color.BLACK);
+		g.setColor(trafficLight.getState().equals(TrafficLight.Light.YELLOW) ? Color.YELLOW : Color.BLACK);
 		g.fillOval(inset, inset + height / 3, diameter, diameter);
 		g.setColor(Color.BLACK);
 		g.drawOval(inset, inset + height / 3, diameter, diameter);
 
-		g.setColor(ampel.getState().equals(Ampel.Light.GREEN) ? Color.GREEN : Color.BLACK);
+		g.setColor(trafficLight.getState().equals(TrafficLight.Light.GREEN) ? Color.GREEN : Color.BLACK);
 		g.fillOval(inset, inset + height * 2 / 3, diameter, diameter);
 		g.setColor(Color.BLACK);
 		g.drawOval(inset, inset + height * 2 / 3, diameter, diameter);
