@@ -21,7 +21,10 @@ public class AmpelApp extends Application {
 
 	@Override
 	public void init() {
-		Ampel ampel = new Ampel(settings.width, settings.height);
-		setController(ampel);
+		Ampel ampel = new Ampel();
+		ampel.traceTo(LOGGER, clock::getFrequency);
+		AmpelUI viewController = new AmpelUI(settings.width, settings.height);
+		viewController.setAmpel(ampel);
+		setController(viewController);
 	}
 }
