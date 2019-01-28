@@ -1,4 +1,4 @@
-package de.amr.easy.statemachine.samples.turnstile;
+package de.amr.statemachine.samples.turnstile;
 
 class TurnstileTraceController implements TurnstileController {
 

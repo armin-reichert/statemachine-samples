@@ -1,9 +1,9 @@
-package de.amr.easy.statemachine.samples.turnstile;
+package de.amr.statemachine.samples.turnstile;
 
-import static de.amr.easy.statemachine.samples.turnstile.TurnstileEvent.COIN;
-import static de.amr.easy.statemachine.samples.turnstile.TurnstileEvent.PASS;
-import static de.amr.easy.statemachine.samples.turnstile.TurnstileState.LOCKED;
-import static de.amr.easy.statemachine.samples.turnstile.TurnstileState.UNLOCKED;
+import static de.amr.statemachine.samples.turnstile.TurnstileEvent.COIN;
+import static de.amr.statemachine.samples.turnstile.TurnstileEvent.PASS;
+import static de.amr.statemachine.samples.turnstile.TurnstileState.LOCKED;
+import static de.amr.statemachine.samples.turnstile.TurnstileState.UNLOCKED;
 
 import de.amr.statemachine.Match;
 import de.amr.statemachine.StateMachine;

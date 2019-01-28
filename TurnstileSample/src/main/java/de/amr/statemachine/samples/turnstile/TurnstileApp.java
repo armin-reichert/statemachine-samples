@@ -1,4 +1,4 @@
-package de.amr.easy.statemachine.samples.turnstile;
+package de.amr.statemachine.samples.turnstile;
 
 import java.util.Random;
 import java.util.stream.IntStream;
