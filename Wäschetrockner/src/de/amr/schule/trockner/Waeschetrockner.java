@@ -124,15 +124,20 @@ public class Waeschetrockner extends SpriteEntity {
 		}
 		if (Keyboard.keyPressedOnce(KeyEvent.VK_E)) {
 			dispatch("EinAusTaste");
-		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_S)) {
+		}
+		else if (Keyboard.keyPressedOnce(KeyEvent.VK_S)) {
 			dispatch("StartTaste");
-		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_T)) {
+		}
+		else if (Keyboard.keyPressedOnce(KeyEvent.VK_T)) {
 			dispatch("TürAuf");
-		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_Z)) {
+		}
+		else if (Keyboard.keyPressedOnce(KeyEvent.VK_Z)) {
 			dispatch("TürZu");
-		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_2)) {
+		}
+		else if (Keyboard.keyPressedOnce(KeyEvent.VK_2)) {
 			dispatch("Auf20");
-		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_1)) {
+		}
+		else if (Keyboard.keyPressedOnce(KeyEvent.VK_1)) {
 			dispatch("Auf15");
 		}
 		Stream.of(steuerung, tür, zeitwahl).forEach(StateMachine::update);
@@ -157,6 +162,8 @@ public class Waeschetrockner extends SpriteEntity {
 		case "Auf20":
 			zeitwahl.enqueue(event);
 			return;
+		default:
+			throw new IllegalArgumentException("Unknown event: " + event);
 		}
 	}
 }
