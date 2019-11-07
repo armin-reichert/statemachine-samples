@@ -10,14 +10,14 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import de.amr.easy.game.assets.Assets;
-import de.amr.easy.game.entity.SpriteEntity;
+import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.input.Mouse;
 import de.amr.easy.game.ui.sprites.Sprite;
 import de.amr.statemachine.Match;
 import de.amr.statemachine.StateMachine;
 
-public class Waeschetrockner extends SpriteEntity {
+public class Waeschetrockner extends Entity {
 
 	private Map<String, Rectangle> sensors = new HashMap<>();
 
