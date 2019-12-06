@@ -6,9 +6,9 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
 import de.amr.easy.game.view.View;
-import de.amr.easy.game.view.ViewController;
+import de.amr.easy.game.view.VisualController;
 
-public class TrafficLightUI implements View, ViewController {
+public class TrafficLightUI implements View, VisualController {
 
 	private final int width;
 	private final int height;
