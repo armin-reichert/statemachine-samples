@@ -14,7 +14,7 @@ import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.input.Mouse;
 import de.amr.easy.game.ui.sprites.Sprite;
-import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class Waeschetrockner extends Entity {
@@ -40,7 +40,7 @@ public class Waeschetrockner extends Entity {
 		// Steuerung
 
 		//@formatter:off
-		steuerung = StateMachine.beginStateMachine(String.class, String.class, Match.BY_EQUALITY)
+		steuerung = StateMachine.beginStateMachine(String.class, String.class, EventMatchStrategy.BY_EQUALITY)
 			.description("Trockner")
 			.initialState("Aus")
 		
@@ -67,7 +67,7 @@ public class Waeschetrockner extends Entity {
 	
 		.endStateMachine();
 
-		tür = StateMachine.beginStateMachine(String.class, String.class, Match.BY_EQUALITY)
+		tür = StateMachine.beginStateMachine(String.class, String.class, EventMatchStrategy.BY_EQUALITY)
 				.description("Tür")
 				.initialState("Zu")
 				
@@ -83,7 +83,7 @@ public class Waeschetrockner extends Entity {
 		
 		.endStateMachine();
 
-		zeitwahl = StateMachine.beginStateMachine(Integer.class, String.class, Match.BY_EQUALITY)
+		zeitwahl = StateMachine.beginStateMachine(Integer.class, String.class, EventMatchStrategy.BY_EQUALITY)
 			.description("Zeitwahl")
 			.initialState(15)
 

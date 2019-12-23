@@ -18,7 +18,7 @@ import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRR;
 import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRR_D;
 
 import de.amr.samples.marbletoy.entities.MarbleToy;
-import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class LeverControl {
@@ -31,7 +31,7 @@ public class LeverControl {
 
 	public LeverControl(MarbleToy toy) {
 		//@formatter:off
-		fsm = StateMachine.beginStateMachine(ToyState.class, Character.class, Match.BY_EQUALITY)
+		fsm = StateMachine.beginStateMachine(ToyState.class, Character.class, EventMatchStrategy.BY_EQUALITY)
 				
 				.description("Marble Toy Lever Control")
 				.initialState(LLL)

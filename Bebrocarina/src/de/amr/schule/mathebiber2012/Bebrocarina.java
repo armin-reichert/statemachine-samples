@@ -3,7 +3,7 @@ package de.amr.schule.mathebiber2012;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 /**
@@ -24,7 +24,7 @@ public class Bebrocarina extends StateMachine<Integer, Character> {
 	}
 
 	public Bebrocarina() {
-		super(Integer.class, Match.BY_EQUALITY);
+		super(Integer.class, EventMatchStrategy.BY_EQUALITY);
 		//@formatter:off
 		beginStateMachine()
 			.description("Bebrocarina")
