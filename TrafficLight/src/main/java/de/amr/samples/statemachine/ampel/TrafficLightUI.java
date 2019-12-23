@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.util.Optional;
 
 import de.amr.easy.game.view.View;
 import de.amr.easy.game.view.VisualController;
@@ -24,8 +25,8 @@ public class TrafficLightUI implements View, VisualController {
 	}
 
 	@Override
-	public View currentView() {
-		return this;
+	public Optional<View> currentView() {
+		return Optional.of(this);
 	}
 
 	@Override
