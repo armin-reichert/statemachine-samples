@@ -18,6 +18,9 @@ public class WaeschetrocknerUI implements View, Controller {
 	public WaeschetrocknerUI(int width, int height, Waeschetrockner maschine) {
 		this.height = height;
 		this.maschine = maschine;
+		maschine.tf.setWidth(width);
+		maschine.tf.setHeight(height);
+		maschine.sprites.get("s_trockner").scale(width, height);
 	}
 
 	@Override
