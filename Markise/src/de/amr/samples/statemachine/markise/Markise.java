@@ -11,7 +11,7 @@ import java.awt.RenderingHints;
 
 import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.entity.Entity;
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.core.Match;
 import de.amr.statemachine.core.StateMachine;
@@ -21,7 +21,7 @@ import de.amr.statemachine.core.StateMachine;
  * 
  * @author Armin Reichert & Anna u. Peter Schillo
  */
-public class Markise extends Entity implements View, Controller {
+public class Markise extends Entity implements View, Lifecycle {
 
 	private final Motor motor;
 	private final PositionsSensor positionsSensor;

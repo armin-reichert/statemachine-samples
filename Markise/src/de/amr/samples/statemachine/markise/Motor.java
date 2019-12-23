@@ -1,8 +1,8 @@
 package de.amr.samples.statemachine.markise;
 
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 
-public class Motor implements Controller {
+public class Motor implements Lifecycle {
 
 	private final Markise markise;
 

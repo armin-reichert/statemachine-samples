@@ -6,11 +6,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.core.State;
 
-public class WaeschetrocknerUI implements View, Controller {
+public class WaeschetrocknerUI implements View, Lifecycle {
 
 	private final int height;
 	private final Waeschetrockner maschine;

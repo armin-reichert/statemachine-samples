@@ -9,7 +9,7 @@ import static de.amr.samples.statemachine.ampel.TrafficLight.Light.YELLOW;
 import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 import de.amr.samples.statemachine.ampel.TrafficLight.Light;
 import de.amr.statemachine.core.StateMachine;
 
@@ -18,7 +18,7 @@ import de.amr.statemachine.core.StateMachine;
  * 
  * @author Armin Reichert & Anna Schillo
  */
-public class TrafficLight extends StateMachine<Light, Void> implements Controller {
+public class TrafficLight extends StateMachine<Light, Void> implements Lifecycle {
 
 	public enum Light {
 		OFF, RED, YELLOW, GREEN;

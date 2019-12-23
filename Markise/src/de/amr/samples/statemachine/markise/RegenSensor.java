@@ -3,9 +3,9 @@ package de.amr.samples.statemachine.markise;
 import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 
-public class RegenSensor implements Controller {
+public class RegenSensor implements Lifecycle {
 
 	private int regenTropfen;
 

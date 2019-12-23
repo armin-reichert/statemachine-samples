@@ -3,9 +3,9 @@ package de.amr.samples.statemachine.markise;
 import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 
-public class WindSensor implements Controller {
+public class WindSensor implements Lifecycle {
 
 	private float windSpeed;
 

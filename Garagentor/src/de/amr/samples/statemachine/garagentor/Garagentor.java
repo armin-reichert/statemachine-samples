@@ -17,12 +17,12 @@ import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.core.Match;
 import de.amr.statemachine.core.StateMachine;
 
-public class Garagentor extends Entity implements View, Controller {
+public class Garagentor extends Entity implements View, Lifecycle {
 
 	public enum TorZustand {
 		GESCHLOSSEN, ÖFFNET, OFFEN, GESTOPPT_BEIM_ÖFFNEN, SCHLIESST, GESTOPPT_BEIM_SCHLIESSEN

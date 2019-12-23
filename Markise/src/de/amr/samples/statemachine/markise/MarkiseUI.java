@@ -4,10 +4,10 @@ import static de.amr.easy.game.Application.app;
 
 import java.awt.Graphics2D;
 
-import de.amr.easy.game.view.Controller;
+import de.amr.easy.game.view.Lifecycle;
 import de.amr.easy.game.view.View;
 
-public class MarkiseUI implements View, Controller {
+public class MarkiseUI implements View, Lifecycle {
 
 	private Markise markise;
 	private Fernbedienung remote;
