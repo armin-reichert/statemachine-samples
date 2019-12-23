@@ -11,8 +11,8 @@ import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.RRR
 
 import java.util.function.Consumer;
 
-import de.amr.statemachine.Match;
-import de.amr.statemachine.StateMachine;
+import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.StateMachine;
 
 public class LeverControlMealyMachine {
 

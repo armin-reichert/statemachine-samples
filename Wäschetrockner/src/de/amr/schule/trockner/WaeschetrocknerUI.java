@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 
 import de.amr.easy.game.view.Controller;
 import de.amr.easy.game.view.View;
-import de.amr.statemachine.State;
+import de.amr.statemachine.core.State;
 
 public class WaeschetrocknerUI implements View, Controller {
 

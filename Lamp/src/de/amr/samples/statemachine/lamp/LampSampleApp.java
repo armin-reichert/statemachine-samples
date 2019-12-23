@@ -6,8 +6,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-import de.amr.statemachine.Match;
-import de.amr.statemachine.StateMachine;
+import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.StateMachine;
 
 public class LampSampleApp {
 

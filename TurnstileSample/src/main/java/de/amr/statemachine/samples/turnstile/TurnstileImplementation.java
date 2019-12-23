@@ -5,8 +5,8 @@ import static de.amr.statemachine.samples.turnstile.TurnstileEvent.PASS;
 import static de.amr.statemachine.samples.turnstile.TurnstileState.LOCKED;
 import static de.amr.statemachine.samples.turnstile.TurnstileState.UNLOCKED;
 
-import de.amr.statemachine.Match;
-import de.amr.statemachine.StateMachine;
+import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.StateMachine;
 
 /**
  * @see https://www.linkedin.com/pulse/automata-based-programming-general-purpose-finite-state-kolarova-1.

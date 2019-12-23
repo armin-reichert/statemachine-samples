@@ -3,8 +3,8 @@ package de.amr.schule.mathebiber2012;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import de.amr.statemachine.Match;
-import de.amr.statemachine.StateMachine;
+import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.StateMachine;
 
 /**
  * @see https://bwinf.de/fileadmin/user_upload/Legacy/informatik-biber/uploads/media/Informatik-Biber_2012_Web_01032013_mitLoesungen.pdf

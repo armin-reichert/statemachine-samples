@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.view.Controller;
 import de.amr.samples.statemachine.ampel.TrafficLight.Light;
-import de.amr.statemachine.StateMachine;
+import de.amr.statemachine.core.StateMachine;
 
 /**
  * A simple traffic light.

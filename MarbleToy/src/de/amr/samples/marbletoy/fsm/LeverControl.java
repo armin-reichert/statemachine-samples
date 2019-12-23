@@ -18,8 +18,8 @@ import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRR;
 import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRR_D;
 
 import de.amr.samples.marbletoy.entities.MarbleToy;
-import de.amr.statemachine.Match;
-import de.amr.statemachine.StateMachine;
+import de.amr.statemachine.core.Match;
+import de.amr.statemachine.core.StateMachine;
 
 public class LeverControl {
 
