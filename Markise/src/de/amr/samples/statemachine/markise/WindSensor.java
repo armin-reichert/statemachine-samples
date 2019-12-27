@@ -2,8 +2,8 @@ package de.amr.samples.statemachine.markise;
 
 import java.awt.event.KeyEvent;
 
+import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Lifecycle;
 
 public class WindSensor implements Lifecycle {
 

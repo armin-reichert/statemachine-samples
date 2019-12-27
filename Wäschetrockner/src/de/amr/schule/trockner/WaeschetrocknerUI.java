@@ -6,7 +6,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 
-import de.amr.easy.game.view.Lifecycle;
+import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.view.View;
 import de.amr.statemachine.core.State;
 

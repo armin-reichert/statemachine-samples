@@ -8,8 +8,8 @@ import static de.amr.samples.statemachine.ampel.TrafficLight.Light.YELLOW;
 
 import java.awt.event.KeyEvent;
 
+import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.input.Keyboard;
-import de.amr.easy.game.view.Lifecycle;
 import de.amr.samples.statemachine.ampel.TrafficLight.Light;
 import de.amr.statemachine.core.StateMachine;
 

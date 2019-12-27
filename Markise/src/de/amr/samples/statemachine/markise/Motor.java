@@ -1,6 +1,6 @@
 package de.amr.samples.statemachine.markise;
 
-import de.amr.easy.game.view.Lifecycle;
+import de.amr.easy.game.controller.Lifecycle;
 
 public class Motor implements Lifecycle {
 
@@ -22,7 +22,8 @@ public class Motor implements Lifecycle {
 		markise.tf.setVelocityX(2);
 	}
 
-	void stop() {
+	@Override
+	public void stop() {
 		markise.tf.setVelocityX(0);
 	}
 
