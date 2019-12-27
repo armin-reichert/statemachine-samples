@@ -1,14 +1,17 @@
 package de.amr.samples.statemachine.markise;
 
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.amr.easy.game.assets.Assets;
+import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Mouse;
-import de.amr.easy.game.ui.sprites.Sprite;
 
-public class Fernbedienung extends Entity {
+public class Fernbedienung extends Entity implements Lifecycle {
 
 	private static final Map<String, Rectangle> BUTTONS = new HashMap<>();
 
@@ -18,16 +21,19 @@ public class Fernbedienung extends Entity {
 		BUTTONS.put("down", new Rectangle(148, 116, 24, 25));
 	}
 
+	public final BufferedImage image;
 	private final Markise markise;
 	private String event;
 
 	public Fernbedienung(Markise markise) {
 		this.markise = markise;
-		Sprite remoteControl = Sprite.ofAssets("remotecontrol.jpg");
-		sprites.set("s_remote", remoteControl);
-		sprites.select("s_remote");
-		tf.setWidth(remoteControl.getWidth());
-		tf.setHeight(remoteControl.getHeight());
+		image = Assets.image("remotecontrol.jpg");
+		tf.setWidth(image.getWidth());
+		tf.setHeight(image.getHeight());
+	}
+	
+	@Override
+	public void init() {
 	}
 
 	@Override
@@ -49,5 +55,10 @@ public class Fernbedienung extends Entity {
 			.findFirst()
 			.ifPresent(event -> this.event = event);
 		/*@formatter:on*/
+	}
+
+	@Override
+	public void draw(Graphics2D g) {
+		g.drawImage(image, (int) tf.getX(), (int) tf.getY(), null);
 	}
 }

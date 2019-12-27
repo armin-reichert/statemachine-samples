@@ -1,19 +1,35 @@
 package de.amr.samples.marbletoy.entities;
 
-import de.amr.easy.game.entity.Entity;
-import de.amr.easy.game.ui.sprites.Sprite;
+import static de.amr.easy.game.assets.Assets.image;
+import static de.amr.easy.game.assets.Assets.scaledImage;
 
-public class Marble extends Entity {
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
+import de.amr.easy.game.controller.Lifecycle;
+import de.amr.easy.game.entity.Entity;
+
+public class Marble extends Entity implements Lifecycle {
+
+	public final BufferedImage image;
 
 	public Marble(int size) {
-		sprites.set("s_marble", Sprite.ofAssets("marble.png").scale(size));
-		sprites.select("s_marble");
+		image = scaledImage(image("marble.png"), size, size);
 		tf.setWidth(size);
 		tf.setHeight(size);
 	}
 
 	@Override
+	public void init() {
+	}
+
+	@Override
 	public void update() {
 		tf.move();
+	}
+
+	@Override
+	public void draw(Graphics2D g) {
+		g.drawImage(image, (int) tf.getX(), (int) tf.getY(), null);
 	}
 }

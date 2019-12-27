@@ -15,13 +15,13 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 import java.util.EnumSet;
 import java.util.Random;
 
 import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
-import de.amr.easy.game.ui.sprites.Sprite;
 import de.amr.samples.marbletoy.fsm.LeverControl;
 import de.amr.samples.marbletoy.router.MarbleRouter;
 import de.amr.samples.marbletoy.router.RoutingPoint;
@@ -30,6 +30,7 @@ public class MarbleToy extends Entity implements Lifecycle {
 
 	private static final Font LABEL_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 18);
 
+	public final BufferedImage image;
 	public final Lever[] levers = new Lever[3];
 	private final EnumSet<RoutingPoint> auxPoints = EnumSet.of(E, F, G, H);
 	private final Marble marble;
@@ -37,8 +38,7 @@ public class MarbleToy extends Entity implements Lifecycle {
 	private LeverControl leverControl;
 
 	public MarbleToy() {
-		sprites.set("s_toy", Sprite.of(Assets.image("toy.png")));
-		sprites.select("s_toy");
+		image = Assets.image("toy.png");
 		this.marble = new Marble(50);
 		marble.tf.setPosition(-marble.tf.getWidth(), -marble.tf.getHeight());
 		levers[0] = new Lever(178, 82);
@@ -93,7 +93,7 @@ public class MarbleToy extends Entity implements Lifecycle {
 
 	@Override
 	public void draw(Graphics2D g) {
-		super.draw(g);
+		g.drawImage(image, (int) tf.getX(), (int) tf.getY(), null);
 		for (Lever lever : levers) {
 			lever.draw(g);
 		}

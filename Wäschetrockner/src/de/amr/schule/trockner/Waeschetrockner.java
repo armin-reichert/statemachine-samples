@@ -10,17 +10,15 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import de.amr.easy.game.assets.Assets;
-import de.amr.easy.game.entity.Entity;
+import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.input.Mouse;
-import de.amr.easy.game.ui.sprites.Sprite;
 import de.amr.statemachine.core.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
-public class Waeschetrockner extends Entity {
+public class Waeschetrockner implements Lifecycle {
 
 	private Map<String, Rectangle> sensors = new HashMap<>();
-
 	{
 		sensors.put("StartTaste", new Rectangle(505, 209, 60, 30));
 		sensors.put("TürAuf", new Rectangle(679, 201, 74, 33));
@@ -34,9 +32,6 @@ public class Waeschetrockner extends Entity {
 	public StateMachine<Integer, String> zeitwahl;
 
 	public Waeschetrockner() {
-		sprites.set("s_trockner", Sprite.ofAssets("trockner.jpg"));
-		sprites.select("s_trockner");
-
 		// Steuerung
 
 		//@formatter:off
