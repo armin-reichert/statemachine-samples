@@ -22,7 +22,7 @@ public class TrafficLightApp extends Application {
 	@Override
 	public void init() {
 		TrafficLight ampel = new TrafficLight();
-		ampel.traceTo(LOGGER, clock::getFrequency);
+		ampel.setLogger(LOGGER);
 		TrafficLightUI viewController = new TrafficLightUI(settings.width, settings.height);
 		viewController.setAmpel(ampel);
 		setController(viewController);

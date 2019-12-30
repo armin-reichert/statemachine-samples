@@ -1,7 +1,6 @@
 package de.amr.samples.statemachine.markise;
 
 import static de.amr.easy.game.Application.LOGGER;
-import static de.amr.easy.game.Application.app;
 import static java.lang.String.format;
 
 import java.awt.Color;
@@ -114,8 +113,7 @@ public class Markise extends Entity implements View, Lifecycle {
 
 		.endStateMachine();
 		//@formatter:on
-
-		automat.traceTo(LOGGER, app().clock::getFrequency);
+		automat.setLogger(LOGGER);
 	}
 
 	public void raiseEvent(String event) {

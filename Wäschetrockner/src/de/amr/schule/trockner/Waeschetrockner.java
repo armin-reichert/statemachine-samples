@@ -99,7 +99,7 @@ public class Waeschetrockner implements Lifecycle {
 	@Override
 	public void init() {
 		Stream.of(steuerung, tür, zeitwahl).forEach(automat -> {
-			automat.traceTo(LOGGER, app().clock::getFrequency);
+			automat.setLogger(LOGGER);
 			automat.init();
 		});
 	}
@@ -119,20 +119,15 @@ public class Waeschetrockner implements Lifecycle {
 		}
 		if (Keyboard.keyPressedOnce(KeyEvent.VK_E)) {
 			dispatch("EinAusTaste");
-		}
-		else if (Keyboard.keyPressedOnce(KeyEvent.VK_S)) {
+		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_S)) {
 			dispatch("StartTaste");
-		}
-		else if (Keyboard.keyPressedOnce(KeyEvent.VK_T)) {
+		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_T)) {
 			dispatch("TürAuf");
-		}
-		else if (Keyboard.keyPressedOnce(KeyEvent.VK_Z)) {
+		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_Z)) {
 			dispatch("TürZu");
-		}
-		else if (Keyboard.keyPressedOnce(KeyEvent.VK_2)) {
+		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_2)) {
 			dispatch("Auf20");
-		}
-		else if (Keyboard.keyPressedOnce(KeyEvent.VK_1)) {
+		} else if (Keyboard.keyPressedOnce(KeyEvent.VK_1)) {
 			dispatch("Auf15");
 		}
 		Stream.of(steuerung, tür, zeitwahl).forEach(StateMachine::update);

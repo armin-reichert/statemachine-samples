@@ -1,8 +1,5 @@
 package de.amr.schule.mathebiber2012;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import de.amr.statemachine.core.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
@@ -13,10 +10,6 @@ public class Bebrocarina extends StateMachine<Integer, Character> {
 
 	public static void main(String[] args) {
 		Bebrocarina bc = new Bebrocarina();
-		Logger logger = Logger.getLogger("Bebrocarina");
-		bc.traceTo(logger, () -> 0);
-		logger.setLevel(Level.OFF);
-
 		bc.prüfeObSpielbar("+ooo+ooo+ooo+ooo+");
 		bc.prüfeObSpielbar("---o+-o--ooo+");
 		bc.prüfeObSpielbar("-----o+++++o-----");
