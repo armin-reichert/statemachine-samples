@@ -9,10 +9,10 @@ import java.awt.image.BufferedImage;
 
 import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
-import de.amr.easy.game.view.View;
+import de.amr.easy.game.entity.Entity;
 import de.amr.statemachine.core.State;
 
-public class WaeschetrocknerUI implements View, Lifecycle {
+public class WaeschetrocknerUI extends Entity implements Lifecycle {
 
 	private final int width;
 	private final int height;
@@ -44,11 +44,10 @@ public class WaeschetrocknerUI implements View, Lifecycle {
 		float remainingTime = maschine.steuerung.state().getTicksRemaining();
 		if (maschine.steuerung.state().getTicksRemaining() != State.ENDLESS) {
 			float sec = remainingTime / app().clock.getFrequency();
-			String text = String.format("Trockner: %s, Tür: %s, Zeit %s (noch %.1f s)",
-					maschine.steuerung.getState(), maschine.tür.getState(), maschine.zeitwahl.getState(), sec);
+			String text = String.format("Trockner: %s, Tür: %s, Zeit %s (noch %.1f s)", maschine.steuerung.getState(),
+					maschine.tür.getState(), maschine.zeitwahl.getState(), sec);
 			g.drawString(text, 100, height - 40);
-		}
-		else {
+		} else {
 			String text = String.format("Trockner: %s, Tür: %s, Zeit %s", maschine.steuerung.getState(),
 					maschine.tür.getState(), maschine.zeitwahl.getState());
 			g.drawString(text, 100, height - 40);

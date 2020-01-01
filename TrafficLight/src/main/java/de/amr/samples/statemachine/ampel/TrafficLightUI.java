@@ -6,10 +6,11 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.util.Optional;
 
+import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.view.View;
 import de.amr.easy.game.view.VisualController;
 
-public class TrafficLightUI implements View, VisualController {
+public class TrafficLightUI extends Entity implements VisualController {
 
 	private final int width;
 	private final int height;
