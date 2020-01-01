@@ -2,11 +2,11 @@ package de.amr.samples.marbletoy;
 
 import java.awt.Color;
 
-import de.amr.easy.game.Application;
+import de.amr.easy.game.GenericApplication;
 import de.amr.samples.marbletoy.entities.MarbleToy;
 import de.amr.samples.marbletoy.fsm.LeverControl;
 
-public class MarbleToySimulation extends Application {
+public class MarbleToySimulation extends GenericApplication {
 
 	public static void main(String[] args) {
 		launch(new MarbleToySimulation(), args);

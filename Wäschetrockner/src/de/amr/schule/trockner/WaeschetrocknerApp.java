@@ -1,8 +1,8 @@
 package de.amr.schule.trockner;
 
-import de.amr.easy.game.Application;
+import de.amr.easy.game.GenericApplication;
 
-public class WaeschetrocknerApp extends Application {
+public class WaeschetrocknerApp extends GenericApplication {
 
 	public static void main(String[] args) {
 		launch(new WaeschetrocknerApp(), args);

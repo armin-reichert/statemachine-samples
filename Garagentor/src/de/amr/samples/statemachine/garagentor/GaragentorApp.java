@@ -2,14 +2,14 @@ package de.amr.samples.statemachine.garagentor;
 
 import java.awt.Color;
 
-import de.amr.easy.game.Application;
+import de.amr.easy.game.GenericApplication;
 
 /**
  * Simuliert unser Garagentor.
  * 
  * @author Armin Reichert, Anna und Peter Schillo
  */
-public class GaragentorApp extends Application {
+public class GaragentorApp extends GenericApplication {
 
 	public static void main(String[] args) {
 		launch(new GaragentorApp(), args);

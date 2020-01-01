@@ -1,13 +1,13 @@
 package de.amr.samples.statemachine.ampel;
 
-import de.amr.easy.game.Application;
+import de.amr.easy.game.GenericApplication;
 
 /**
  * Simple traffic light simulation using finite state machine.
  * 
  * @author Armin Reichert & Anna Schillo
  */
-public class TrafficLightApp extends Application {
+public class TrafficLightApp extends GenericApplication {
 
 	public static void main(String[] args) {
 		launch(new TrafficLightApp(), args);
