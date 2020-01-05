@@ -16,19 +16,19 @@ public class GaragentorApp extends GenericApplication {
 	}
 
 	public GaragentorApp() {
-		settings.title = "Garagentor Simulation";
-		settings.width = 800;
-		settings.height = 600;
-		settings.bgColor = Color.WHITE;
-		clock.setFrequency(10);
+		settings().title = "Garagentor Simulation";
+		settings().width = 800;
+		settings().height = 600;
+		settings().bgColor = Color.WHITE;
+		clock().setFrequency(10);
 	}
 
 	@Override
 	public void init() {
 		Garagentor tor = new Garagentor();
-		tor.tf.setWidth(settings.width);
+		tor.tf.setWidth(settings().width);
 		tor.tf.setHeight(100);
-		tor.tf.setY(settings.height - 100);
+		tor.tf.setY(settings().height - 100);
 		setController(tor);
 	}
 }

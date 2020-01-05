@@ -9,13 +9,13 @@ public class WaeschetrocknerApp extends GenericApplication {
 	}
 
 	public WaeschetrocknerApp() {
-		settings.title = "Wäschetrockner Simulation";
-		settings.width = 800;
-		settings.height = 360;
+		settings().title = "Wäschetrockner Simulation";
+		settings().width = 800;
+		settings().height = 360;
 	}
 
 	@Override
 	public void init() {
-		setController(new WaeschetrocknerUI(settings.width, settings.height, new Waeschetrockner()));
+		setController(new WaeschetrocknerUI(settings().width, settings().height, new Waeschetrockner()));
 	}
 }

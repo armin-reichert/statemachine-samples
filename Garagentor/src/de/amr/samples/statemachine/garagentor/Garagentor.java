@@ -46,7 +46,7 @@ public class Garagentor extends Entity implements View, Lifecycle {
 		.states()
 		
 				.state(GESCHLOSSEN)
-						.timeoutAfter(() -> app().clock.sec(5))
+						.timeoutAfter(() -> app().clock().sec(5))
 						.onEntry(() -> lichtAn())
 						.onExit(() -> lichtAus())
 				

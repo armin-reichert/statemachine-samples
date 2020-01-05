@@ -13,10 +13,10 @@ public class MarbleToySimulation extends GenericApplication {
 	}
 
 	public MarbleToySimulation() {
-		settings.title = "Marble Toy State Machine";
-		settings.width = 600;
-		settings.height = 410;
-		settings.bgColor = Color.WHITE;
+		settings().title = "Marble Toy State Machine";
+		settings().width = 600;
+		settings().height = 410;
+		settings().bgColor = Color.WHITE;
 	}
 
 	@Override

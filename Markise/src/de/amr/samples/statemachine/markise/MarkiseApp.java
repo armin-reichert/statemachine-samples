@@ -11,11 +11,11 @@ public class MarkiseApp extends GenericApplication {
 	}
 
 	public MarkiseApp() {
-		settings.title = "Markise Simulation";
-		settings.width = 800;
-		settings.height = 600;
-		settings.bgColor = Color.WHITE;
-		clock.setFrequency(5);
+		settings().title = "Markise Simulation";
+		settings().width = 800;
+		settings().height = 600;
+		settings().bgColor = Color.WHITE;
+		clock().setFrequency(5);
 	}
 
 	@Override

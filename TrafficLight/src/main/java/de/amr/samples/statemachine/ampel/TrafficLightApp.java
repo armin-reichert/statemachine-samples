@@ -14,16 +14,16 @@ public class TrafficLightApp extends GenericApplication {
 	}
 
 	public TrafficLightApp() {
-		settings.title = "Traffic Light Simulation";
-		settings.width = 150;
-		settings.height = 450;
+		settings().title = "Traffic Light Simulation";
+		settings().width = 150;
+		settings().height = 450;
 	}
 
 	@Override
 	public void init() {
 		TrafficLight ampel = new TrafficLight();
 		ampel.setLogger(LOGGER);
-		TrafficLightUI viewController = new TrafficLightUI(settings.width, settings.height);
+		TrafficLightUI viewController = new TrafficLightUI(settings().width, settings().height);
 		viewController.setAmpel(ampel);
 		setController(viewController);
 	}

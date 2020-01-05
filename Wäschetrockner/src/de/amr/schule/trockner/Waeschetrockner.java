@@ -42,7 +42,7 @@ public class Waeschetrockner implements Lifecycle {
 		.states()
 			.state("Aus")
 			.state("Bereit")
-			.state("Läuft").timeoutAfter(() -> app().clock.sec(zeitwahl.getState()))
+			.state("Läuft").timeoutAfter(() -> app().clock().sec(zeitwahl.getState()))
 				
 		.transitions()
 			.when("Aus").then("Bereit").on("EinAusTaste")
