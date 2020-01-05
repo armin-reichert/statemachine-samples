@@ -2,9 +2,9 @@ package de.amr.samples.statemachine.markise;
 
 import java.awt.Color;
 
-import de.amr.easy.game.GenericApplication;
+import de.amr.easy.game.Application;
 
-public class MarkiseApp extends GenericApplication {
+public class MarkiseApp extends Application {
 
 	public static void main(String[] args) {
 		launch(new MarkiseApp(), args);
