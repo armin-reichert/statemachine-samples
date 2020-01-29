@@ -1,17 +1,19 @@
 package de.amr.schule.trockner;
 
 import de.amr.easy.game.Application;
+import de.amr.easy.game.config.AppSettings;
 
 public class WaeschetrocknerApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new WaeschetrocknerApp(), args);
+		launch(WaeschetrocknerApp.class, args);
 	}
 
-	public WaeschetrocknerApp() {
-		settings().title = "Wäschetrockner Simulation";
-		settings().width = 800;
-		settings().height = 360;
+	@Override
+	protected void configure(AppSettings settings) {
+		settings.title = "Wäschetrockner Simulation";
+		settings.width = 800;
+		settings.height = 360;
 	}
 
 	@Override

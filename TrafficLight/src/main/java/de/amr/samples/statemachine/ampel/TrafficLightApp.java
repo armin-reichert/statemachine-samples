@@ -1,6 +1,7 @@
 package de.amr.samples.statemachine.ampel;
 
 import de.amr.easy.game.Application;
+import de.amr.easy.game.config.AppSettings;
 
 /**
  * Simple traffic light simulation using finite state machine.
@@ -10,13 +11,14 @@ import de.amr.easy.game.Application;
 public class TrafficLightApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new TrafficLightApp(), args);
+		launch(TrafficLightApp.class, args);
 	}
 
-	public TrafficLightApp() {
-		settings().title = "Traffic Light Simulation";
-		settings().width = 150;
-		settings().height = 450;
+	@Override
+	protected void configure(AppSettings settings) {
+		settings.title = "Traffic Light Simulation";
+		settings.width = 150;
+		settings.height = 450;
 	}
 
 	@Override

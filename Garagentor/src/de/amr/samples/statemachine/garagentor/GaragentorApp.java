@@ -3,6 +3,7 @@ package de.amr.samples.statemachine.garagentor;
 import java.awt.Color;
 
 import de.amr.easy.game.Application;
+import de.amr.easy.game.config.AppSettings;
 
 /**
  * Simuliert unser Garagentor.
@@ -12,15 +13,15 @@ import de.amr.easy.game.Application;
 public class GaragentorApp extends Application {
 
 	public static void main(String[] args) {
-		launch(new GaragentorApp(), args);
+		launch(GaragentorApp.class, args);
 	}
 
-	public GaragentorApp() {
-		settings().title = "Garagentor Simulation";
-		settings().width = 800;
-		settings().height = 600;
-		settings().bgColor = Color.WHITE;
-		clock().setFrequency(10);
+	@Override
+	protected void configure(AppSettings settings) {
+		settings.title = "Garagentor Simulation";
+		settings.width = 800;
+		settings.height = 600;
+		settings.bgColor = Color.WHITE;
 	}
 
 	@Override
@@ -30,5 +31,6 @@ public class GaragentorApp extends Application {
 		tor.tf.setHeight(100);
 		tor.tf.setY(settings().height - 100);
 		setController(tor);
+		clock().setFrequency(10);
 	}
 }
