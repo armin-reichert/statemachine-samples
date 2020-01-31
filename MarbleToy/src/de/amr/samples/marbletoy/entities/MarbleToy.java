@@ -44,12 +44,12 @@ public class MarbleToy extends Entity implements Lifecycle {
 		levers[1] = new Lever(424, 82);
 		levers[2] = new Lever(301, 204);
 		router = new MarbleRouter(this);
-		router.getFsm().setLogger(LOGGER);
+		router.getFsm().getTracer().setLogger(LOGGER);
 	}
 
 	public void setLeverControl(LeverControl leverControl) {
 		this.leverControl = leverControl;
-		leverControl.getFsm().setLogger(LOGGER);
+		leverControl.getFsm().getTracer().setLogger(LOGGER);
 	}
 
 	@Override

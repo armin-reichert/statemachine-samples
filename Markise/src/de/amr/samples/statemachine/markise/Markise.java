@@ -113,7 +113,7 @@ public class Markise extends Entity implements View, Lifecycle {
 
 		.endStateMachine();
 		//@formatter:on
-		automat.setLogger(LOGGER);
+		automat.getTracer().setLogger(LOGGER);
 	}
 
 	public void raiseEvent(String event) {

@@ -99,7 +99,7 @@ public class Waeschetrockner implements Lifecycle {
 	@Override
 	public void init() {
 		Stream.of(steuerung, tür, zeitwahl).forEach(automat -> {
-			automat.setLogger(LOGGER);
+			automat.getTracer().setLogger(LOGGER);
 			automat.init();
 		});
 	}
