@@ -43,7 +43,7 @@ public class WaeschetrocknerUI extends Entity implements Lifecycle {
 		g.setFont(new Font("Sans", Font.PLAIN, 30));
 		float remainingTime = maschine.steuerung.state().getTicksRemaining();
 		if (maschine.steuerung.state().getTicksRemaining() != State.ENDLESS) {
-			float sec = remainingTime / app().clock().getFrequency();
+			float sec = remainingTime / app().clock().getTargetFramerate();
 			String text = String.format("Trockner: %s, Tür: %s, Zeit %s (noch %.1f s)", maschine.steuerung.getState(),
 					maschine.tür.getState(), maschine.zeitwahl.getState(), sec);
 			g.drawString(text, 100, height - 40);

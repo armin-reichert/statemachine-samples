@@ -31,6 +31,6 @@ public class GaragentorApp extends Application {
 		tor.tf.setHeight(100);
 		tor.tf.setY(settings().height - 100);
 		setController(tor);
-		clock().setFrequency(10);
+		clock().setTargetFramerate(10);
 	}
 }
