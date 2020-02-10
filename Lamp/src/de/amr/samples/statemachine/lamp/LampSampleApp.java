@@ -6,7 +6,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-import de.amr.statemachine.core.EventMatchStrategy;
+import de.amr.statemachine.api.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class LampSampleApp {

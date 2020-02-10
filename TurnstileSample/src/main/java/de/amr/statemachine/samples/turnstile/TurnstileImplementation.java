@@ -5,7 +5,7 @@ import static de.amr.statemachine.samples.turnstile.TurnstileEvent.PASS;
 import static de.amr.statemachine.samples.turnstile.TurnstileState.LOCKED;
 import static de.amr.statemachine.samples.turnstile.TurnstileState.UNLOCKED;
 
-import de.amr.statemachine.core.EventMatchStrategy;
+import de.amr.statemachine.api.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 /**

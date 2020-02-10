@@ -1,6 +1,6 @@
 package de.amr.schule.mathebiber2012;
 
-import de.amr.statemachine.core.EventMatchStrategy;
+import de.amr.statemachine.api.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 /**

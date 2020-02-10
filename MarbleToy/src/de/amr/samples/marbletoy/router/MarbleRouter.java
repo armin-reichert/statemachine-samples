@@ -17,7 +17,7 @@ import static de.amr.samples.marbletoy.router.RoutingPoint.X3;
 
 import de.amr.easy.game.math.Vector2f;
 import de.amr.samples.marbletoy.entities.MarbleToy;
-import de.amr.statemachine.core.EventMatchStrategy;
+import de.amr.statemachine.api.EventMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class MarbleRouter {
