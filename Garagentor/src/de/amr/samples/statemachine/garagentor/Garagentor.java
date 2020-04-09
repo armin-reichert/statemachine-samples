@@ -48,7 +48,10 @@ public class Garagentor extends Entity implements View, Lifecycle {
 				.state(GESCHLOSSEN)
 						.timeoutAfter(() -> app().clock().sec(5))
 						.onEntry(() -> lichtAn())
-						.onExit(() -> lichtAus())
+						.onExit(() -> {
+							System.out.println("Exit action");
+							lichtAus();
+						})
 				
 				.state(ÖFFNET)
 					.onTick(() -> position++)
@@ -62,7 +65,10 @@ public class Garagentor extends Entity implements View, Lifecycle {
 		
 				.when(GESCHLOSSEN).then(ÖFFNET).on(SCHALTER_GEDRÜCKT)
 				.when(GESCHLOSSEN).then(ÖFFNET).on(FB_GEDRÜCKT)
-				.stay(GESCHLOSSEN).onTimeout().act(() -> lichtAus())
+				.stay(GESCHLOSSEN).onTimeout().act(() -> {
+					lichtAus();
+					System.out.println("loop transition on timeout");
+				})
 				
 				.when(ÖFFNET).then(OFFEN).condition(() -> endPunktErreicht())
 				.when(ÖFFNET).then(GESTOPPT_BEIM_ÖFFNEN).on(SCHALTER_GEDRÜCKT)
@@ -121,10 +127,12 @@ public class Garagentor extends Entity implements View, Lifecycle {
 
 	private void lichtAn() {
 		lichtBrennt = true;
+		System.out.println("Licht an");
 	}
 
 	private void lichtAus() {
 		lichtBrennt = false;
+		System.out.println("Licht aus");
 	}
 
 	@Override
