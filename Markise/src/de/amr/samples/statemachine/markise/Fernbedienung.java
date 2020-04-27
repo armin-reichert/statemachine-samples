@@ -10,8 +10,9 @@ import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Mouse;
+import de.amr.easy.game.view.View;
 
-public class Fernbedienung extends Entity implements Lifecycle {
+public class Fernbedienung extends Entity implements Lifecycle, View {
 
 	private static final Map<String, Rectangle> BUTTONS = new HashMap<>();
 
@@ -31,7 +32,7 @@ public class Fernbedienung extends Entity implements Lifecycle {
 		tf.setWidth(image.getWidth());
 		tf.setHeight(image.getHeight());
 	}
-	
+
 	@Override
 	public void init() {
 	}

@@ -21,11 +21,12 @@ import java.util.Random;
 import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
+import de.amr.easy.game.view.View;
 import de.amr.samples.marbletoy.fsm.LeverControl;
 import de.amr.samples.marbletoy.router.MarbleRouter;
 import de.amr.samples.marbletoy.router.RoutingPoint;
 
-public class MarbleToy extends Entity implements Lifecycle {
+public class MarbleToy extends Entity implements Lifecycle, View {
 
 	private static final Font LABEL_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 18);
 

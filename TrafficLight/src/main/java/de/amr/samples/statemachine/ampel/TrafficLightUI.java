@@ -4,13 +4,12 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.util.Optional;
 
+import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.view.View;
-import de.amr.easy.game.view.VisualController;
 
-public class TrafficLightUI extends Entity implements VisualController {
+public class TrafficLightUI extends Entity implements Lifecycle, View {
 
 	private final int width;
 	private final int height;
@@ -23,11 +22,6 @@ public class TrafficLightUI extends Entity implements VisualController {
 
 	public void setAmpel(TrafficLight trafficLight) {
 		this.trafficLight = trafficLight;
-	}
-
-	@Override
-	public Optional<View> currentView() {
-		return Optional.of(this);
 	}
 
 	@Override

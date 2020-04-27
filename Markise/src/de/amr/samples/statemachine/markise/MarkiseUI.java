@@ -5,9 +5,9 @@ import static de.amr.easy.game.Application.app;
 import java.awt.Graphics2D;
 
 import de.amr.easy.game.controller.Lifecycle;
-import de.amr.easy.game.entity.Entity;
+import de.amr.easy.game.view.View;
 
-public class MarkiseUI extends Entity implements Lifecycle {
+public class MarkiseUI implements Lifecycle, View {
 
 	private Markise markise;
 	private Fernbedienung remote;

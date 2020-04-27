@@ -8,8 +8,9 @@ import java.awt.image.BufferedImage;
 
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
+import de.amr.easy.game.view.View;
 
-public class Marble extends Entity implements Lifecycle {
+public class Marble extends Entity implements Lifecycle, View {
 
 	public final BufferedImage image;
 
