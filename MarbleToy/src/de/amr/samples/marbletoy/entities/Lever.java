@@ -15,8 +15,8 @@ public class Lever extends Entity implements View {
 
 	public Lever(int x, int y) {
 		tf.setPosition(x - size / 2, y - size / 2);
-		tf.setWidth(size);
-		tf.setHeight(size);
+		tf.width =(size);
+		tf.height =(size);
 	}
 
 	public boolean pointsLeft() {
@@ -31,7 +31,7 @@ public class Lever extends Entity implements View {
 	public void draw(Graphics2D g) {
 		g.setColor(new Color(200, 200, 200));
 		g.setStroke(new BasicStroke(4));
-		g.translate(tf.getX(), tf.getY());
+		g.translate(tf.x, tf.y);
 		g.translate(size / 2, size / 2);
 		if (pointsLeft) {
 			g.drawLine(leg, -leg, -leg, leg);
@@ -40,7 +40,7 @@ public class Lever extends Entity implements View {
 		}
 		g.translate(-size / 2, -size / 2);
 		g.fillOval(size / 4, size / 4, size / 2, size / 2);
-		g.translate(-tf.getX(), -tf.getY());
+		g.translate(-tf.x, -tf.y);
 		// g.setColor(Color.BLACK);
 		// g.setStroke(new BasicStroke(1));
 		// g.draw(getCollisionBox());

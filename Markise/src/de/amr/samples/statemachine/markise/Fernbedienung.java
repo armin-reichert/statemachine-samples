@@ -29,8 +29,8 @@ public class Fernbedienung extends Entity implements Lifecycle, View {
 	public Fernbedienung(Markise markise) {
 		this.markise = markise;
 		image = Assets.image("remotecontrol.jpg");
-		tf.setWidth(image.getWidth());
-		tf.setHeight(image.getHeight());
+		tf.width =(image.getWidth());
+		tf.height =(image.getHeight());
 	}
 
 	@Override
@@ -60,6 +60,6 @@ public class Fernbedienung extends Entity implements Lifecycle, View {
 
 	@Override
 	public void draw(Graphics2D g) {
-		g.drawImage(image, (int) tf.getX(), (int) tf.getY(), null);
+		g.drawImage(image, (int) tf.x, (int) tf.y, null);
 	}
 }

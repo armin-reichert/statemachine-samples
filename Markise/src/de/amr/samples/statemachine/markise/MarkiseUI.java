@@ -18,8 +18,8 @@ public class MarkiseUI implements Lifecycle, View {
 	@Override
 	public void init() {
 		markise = new Markise();
-		markise.tf.setWidth(app().settings().width);
-		markise.tf.setY(app().settings().height - 100);
+		markise.tf.width =(app().settings().width);
+		markise.tf.y=(app().settings().height - 100);
 		markise.init();
 		remote = new Fernbedienung(markise);
 	}

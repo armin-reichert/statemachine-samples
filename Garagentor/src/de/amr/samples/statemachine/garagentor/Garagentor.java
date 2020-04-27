@@ -137,16 +137,16 @@ public class Garagentor extends Entity implements View, Lifecycle {
 
 	@Override
 	public void draw(Graphics2D g) {
-		g.translate(tf.getX(), tf.getY());
+		g.translate(tf.x, tf.y);
 		g.setColor(Color.BLUE);
-		int w = position * tf.getWidth() / 100;
+		int w = position * tf.width / 100;
 		g.fillRect(0, 0, w, 20);
-		g.translate(-tf.getX(), -tf.getY());
+		g.translate(-tf.x, -tf.y);
 	
-		g.translate(tf.getX(), tf.getY() + 40);
+		g.translate(tf.x, tf.y + 40);
 		g.setFont(new Font("Monospaced", Font.BOLD, 20));
 		g.drawString(String.format("Position: %d, Zustand: %s, Hindernis: %s, %s", position, steuerung.getState(),
 				hindernis ? "Ja" : "Nein", lichtBrennt ? "Licht brennt" : ""), 0, 0);
-		g.translate(-tf.getX(), -tf.getY());
+		g.translate(-tf.x, -tf.y);
 	}
 }

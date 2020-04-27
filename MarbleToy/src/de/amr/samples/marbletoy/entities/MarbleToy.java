@@ -40,7 +40,7 @@ public class MarbleToy extends Entity implements Lifecycle, View {
 	public MarbleToy() {
 		image = Assets.image("toy.png");
 		this.marble = new Marble(50);
-		marble.tf.setPosition(-marble.tf.getWidth(), -marble.tf.getHeight());
+		marble.tf.setPosition(-marble.tf.width, -marble.tf.height);
 		levers[0] = new Lever(178, 82);
 		levers[1] = new Lever(424, 82);
 		levers[2] = new Lever(301, 204);
@@ -93,7 +93,7 @@ public class MarbleToy extends Entity implements Lifecycle, View {
 
 	@Override
 	public void draw(Graphics2D g) {
-		g.drawImage(image, (int) tf.getX(), (int) tf.getY(), null);
+		g.drawImage(image, (int) tf.x, (int) tf.y, null);
 		for (Lever lever : levers) {
 			lever.draw(g);
 		}

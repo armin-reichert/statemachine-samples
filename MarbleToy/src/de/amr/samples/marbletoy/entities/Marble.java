@@ -16,8 +16,8 @@ public class Marble extends Entity implements Lifecycle, View {
 
 	public Marble(int size) {
 		image = scaledImage(image("marble.png"), size, size);
-		tf.setWidth(size);
-		tf.setHeight(size);
+		tf.width =(size);
+		tf.height =(size);
 	}
 
 	@Override
@@ -31,6 +31,6 @@ public class Marble extends Entity implements Lifecycle, View {
 
 	@Override
 	public void draw(Graphics2D g) {
-		g.drawImage(image, (int) tf.getX(), (int) tf.getY(), null);
+		g.drawImage(image, (int) tf.x, (int) tf.y, null);
 	}
 }

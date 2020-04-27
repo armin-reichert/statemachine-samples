@@ -74,8 +74,8 @@ public class MarbleRouter {
 	}
 
 	private void placeMarbleCenteredAt(RoutingPoint p) {
-		toy.getMarble().tf.setPosition(p.getLocation().x - toy.getMarble().tf.getWidth() / 2,
-				p.getLocation().y - toy.getMarble().tf.getHeight() / 2);
+		toy.getMarble().tf.setPosition(p.getLocation().x - toy.getMarble().tf.width / 2,
+				p.getLocation().y - toy.getMarble().tf.height / 2);
 	}
 
 	private void routeMarble(RoutingPoint from, RoutingPoint to) {

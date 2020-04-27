@@ -148,17 +148,17 @@ public class Markise extends Entity implements View, Lifecycle {
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		// Balken zum Anzeigen der Ausfahrposition
-		g.translate(tf.getX(), tf.getY());
+		g.translate(tf.x, tf.y);
 		g.setColor(Color.BLUE);
-		g.fillRect(0, 0, Math.round(position / 100f * tf.getWidth()), 30);
-		g.translate(-tf.getX(), -tf.getY());
+		g.fillRect(0, 0, Math.round(position / 100f * tf.width), 30);
+		g.translate(-tf.x, -tf.y);
 
 		// Statustext
-		g.translate(tf.getX(), tf.getY() + 80);
+		g.translate(tf.x, tf.y + 80);
 		g.setFont(new Font("Monospaced", Font.BOLD, 16));
 		g.drawString(format("Wetter: %s %s  Geschw: %.1f  Position: %d%%  Zustand: %s",
 				regenSensor.esRegnet() ? "Regen" : "Sonnenschein", windSensor.windig() ? "Windig" : "Windstill",
 				tf.getVelocityX(), position, automat.getState()), 0, 0);
-		g.translate(-tf.getX(), -(tf.getY() + 80));
+		g.translate(-tf.x, -(tf.y + 80));
 	}
 }
