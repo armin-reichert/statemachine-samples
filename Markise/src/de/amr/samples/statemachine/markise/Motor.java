@@ -11,20 +11,20 @@ public class Motor implements Lifecycle {
 	}
 
 	void zurück() {
-		markise.tf.setVelocityX(-2);
+		markise.tf.vx = -2;
 	}
 
 	void schnellZurück() {
-		markise.tf.setVelocityX(-4);
+		markise.tf.vx = -4;
 	}
 
 	void vor() {
-		markise.tf.setVelocityX(2);
+		markise.tf.vx = 2;
 	}
 
 	@Override
 	public void stop() {
-		markise.tf.setVelocityX(0);
+		markise.tf.vx = 0;
 	}
 
 	@Override
@@ -33,10 +33,10 @@ public class Motor implements Lifecycle {
 
 	@Override
 	public void update() {
-		int newPosition = Math.round(markise.getPosition() + markise.tf.getVelocityX());
+		int newPosition = Math.round(markise.getPosition() + markise.tf.vx);
 		if (newPosition < 0) {
-			markise.tf.setVelocityX(-markise.getPosition());
-			markise.setPosition(Math.round(markise.getPosition() + markise.tf.getVelocityX()));
+			markise.tf.vx = -markise.getPosition();
+			markise.setPosition(Math.round(markise.getPosition() + markise.tf.vx));
 		} else {
 			markise.setPosition(newPosition);
 		}

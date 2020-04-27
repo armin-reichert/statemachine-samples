@@ -158,7 +158,7 @@ public class Markise extends Entity implements View, Lifecycle {
 		g.setFont(new Font("Monospaced", Font.BOLD, 16));
 		g.drawString(format("Wetter: %s %s  Geschw: %.1f  Position: %d%%  Zustand: %s",
 				regenSensor.esRegnet() ? "Regen" : "Sonnenschein", windSensor.windig() ? "Windig" : "Windstill",
-				tf.getVelocityX(), position, automat.getState()), 0, 0);
+				tf.vx, position, automat.getState()), 0, 0);
 		g.translate(-tf.x, -(tf.y + 80));
 	}
 }
