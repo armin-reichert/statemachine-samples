@@ -6,10 +6,9 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
 import de.amr.easy.game.controller.Lifecycle;
-import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.view.View;
 
-public class TrafficLightUI extends Entity implements Lifecycle, View {
+public class TrafficLightUI implements Lifecycle, View {
 
 	private final int width;
 	private final int height;
