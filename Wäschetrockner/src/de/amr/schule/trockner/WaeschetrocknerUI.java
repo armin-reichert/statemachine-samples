@@ -9,10 +9,9 @@ import java.awt.image.BufferedImage;
 
 import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
-import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.view.View;
 
-public class WaeschetrocknerUI extends Entity implements Lifecycle, View {
+public class WaeschetrocknerUI implements Lifecycle, View {
 
 	private final int width;
 	private final int height;
