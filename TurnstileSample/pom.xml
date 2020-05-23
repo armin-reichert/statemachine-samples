@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.amr.statemachine.samples</groupId>
   <artifactId>TurnstileSample</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Turnstile Sample</name>
   <build>
     <plugins>
@@ -20,7 +20,7 @@
   	<dependency>
   		<groupId>de.amr.statemachine</groupId>
   		<artifactId>StateMachine</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>1.0</version>
   	</dependency>
   </dependencies>
 </project>

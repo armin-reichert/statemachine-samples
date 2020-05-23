@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.amr.samples.statemachine</groupId>
 	<artifactId>Ampel</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Ampel</name>
 	<description>Traffic lights test app</description>
 	<build>
@@ -23,12 +23,12 @@
 		<dependency>
 			<groupId>de.amr.easy.game</groupId>
 			<artifactId>EasyGame</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>de.amr.statemachine</groupId>
 			<artifactId>StateMachine</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 </project>
