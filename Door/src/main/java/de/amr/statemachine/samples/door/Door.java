@@ -13,6 +13,7 @@ public class Door {
 		door.lock();
 		door.close();
 		door.unlock();
+		door.lock();
 	}
 
 	DoorController state = new DoorController();
