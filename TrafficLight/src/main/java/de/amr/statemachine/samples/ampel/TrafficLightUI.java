@@ -1,4 +1,4 @@
-package de.amr.samples.statemachine.ampel;
+package de.amr.statemachine.samples.ampel;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

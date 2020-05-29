@@ -1,4 +1,4 @@
-package de.amr.samples.statemachine.ampel;
+package de.amr.statemachine.samples.ampel;
 
 import de.amr.easy.game.Application;
 import de.amr.easy.game.config.AppSettings;
