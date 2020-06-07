@@ -1,7 +1,5 @@
 package de.amr.samples.marbletoy;
 
-import java.awt.Color;
-
 import de.amr.easy.game.Application;
 import de.amr.easy.game.config.AppSettings;
 import de.amr.samples.marbletoy.entities.MarbleToy;
@@ -18,7 +16,6 @@ public class MarbleToySimulation extends Application {
 		settings.title = "Marble Toy State Machine";
 		settings.width = 600;
 		settings.height = 410;
-		settings.bgColor = Color.WHITE;
 	}
 
 	@Override

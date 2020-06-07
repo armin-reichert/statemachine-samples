@@ -1,7 +1,5 @@
 package de.amr.samples.statemachine.garagentor;
 
-import java.awt.Color;
-
 import de.amr.easy.game.Application;
 import de.amr.easy.game.config.AppSettings;
 
@@ -21,15 +19,14 @@ public class GaragentorApp extends Application {
 		settings.title = "Garagentor Simulation";
 		settings.width = 800;
 		settings.height = 600;
-		settings.bgColor = Color.WHITE;
 	}
 
 	@Override
 	public void init() {
 		Garagentor tor = new Garagentor();
-		tor.tf.width =(settings().width);
-		tor.tf.height =(100);
-		tor.tf.y=(settings().height - 100);
+		tor.tf.width = (settings().width);
+		tor.tf.height = (100);
+		tor.tf.y = (settings().height - 100);
 		setController(tor);
 		clock().setTargetFrameRate(10);
 	}

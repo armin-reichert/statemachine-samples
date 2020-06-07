@@ -1,7 +1,5 @@
 package de.amr.samples.statemachine.markise;
 
-import java.awt.Color;
-
 import de.amr.easy.game.Application;
 import de.amr.easy.game.config.AppSettings;
 
@@ -16,7 +14,6 @@ public class MarkiseApp extends Application {
 		settings.title = "Markise Simulation";
 		settings.width = 800;
 		settings.height = 600;
-		settings.bgColor = Color.WHITE;
 		clock().setTargetFrameRate(5);
 	}
 
