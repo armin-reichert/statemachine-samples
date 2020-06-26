@@ -1,5 +1,7 @@
 package de.amr.statemachine.samples.ampel;
 
+import static de.amr.easy.game.Application.app;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -42,8 +44,8 @@ class TrafficLightUI implements Lifecycle, View {
 
 	public TrafficLightUI(TrafficLight trafficLight) {
 		this.trafficLight = trafficLight;
-		this.width = Application.app().settings().width;
-		this.height = Application.app().settings().height;
+		this.width = app().settings().width;
+		this.height = app().settings().height;
 	}
 
 	@Override
@@ -67,17 +69,17 @@ class TrafficLightUI implements Lifecycle, View {
 
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		g.setColor(trafficLight.getState().equals(TrafficLight.Light.RED) ? Color.RED : Color.BLACK);
+		g.setColor(trafficLight.getState() == TrafficLight.Light.RED ? Color.RED : Color.BLACK);
 		g.fillOval(inset, inset, d, d);
 		g.setColor(Color.BLACK);
 		g.drawOval(inset, inset, d, d);
 
-		g.setColor(trafficLight.getState().equals(TrafficLight.Light.YELLOW) ? Color.YELLOW : Color.BLACK);
+		g.setColor(trafficLight.getState() == TrafficLight.Light.YELLOW ? Color.YELLOW : Color.BLACK);
 		g.fillOval(inset, inset + height / 3, d, d);
 		g.setColor(Color.BLACK);
 		g.drawOval(inset, inset + height / 3, d, d);
 
-		g.setColor(trafficLight.getState().equals(TrafficLight.Light.GREEN) ? Color.GREEN : Color.BLACK);
+		g.setColor(trafficLight.getState() == TrafficLight.Light.GREEN ? Color.GREEN : Color.BLACK);
 		g.fillOval(inset, inset + height * 2 / 3, d, d);
 		g.setColor(Color.BLACK);
 		g.drawOval(inset, inset + height * 2 / 3, d, d);
