@@ -77,11 +77,10 @@ public class LeverControl {
 		//@formatter:on
 
 		for (ToyState stateID : ToyState.values()) {
-			fsm.state(stateID).setOnEntry(() -> updateLevers(toy));
+			fsm.state(stateID).entryAction = () -> updateLevers(toy);
 		}
 	}
-	
-	
+
 	public StateMachine<ToyState, Character> getFsm() {
 		return fsm;
 	}
