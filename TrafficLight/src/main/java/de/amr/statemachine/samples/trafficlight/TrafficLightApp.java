@@ -1,4 +1,4 @@
-package de.amr.statemachine.samples.ampel;
+package de.amr.statemachine.samples.trafficlight;
 
 import static de.amr.easy.game.Application.app;
 

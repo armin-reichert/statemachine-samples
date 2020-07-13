@@ -1,16 +1,16 @@
-package de.amr.statemachine.samples.ampel;
+package de.amr.statemachine.samples.trafficlight;
 
 import static de.amr.easy.game.Application.app;
-import static de.amr.statemachine.samples.ampel.TrafficLight.Light.GREEN;
-import static de.amr.statemachine.samples.ampel.TrafficLight.Light.OFF;
-import static de.amr.statemachine.samples.ampel.TrafficLight.Light.RED;
-import static de.amr.statemachine.samples.ampel.TrafficLight.Light.YELLOW;
+import static de.amr.statemachine.samples.trafficlight.TrafficLight.Light.GREEN;
+import static de.amr.statemachine.samples.trafficlight.TrafficLight.Light.OFF;
+import static de.amr.statemachine.samples.trafficlight.TrafficLight.Light.RED;
+import static de.amr.statemachine.samples.trafficlight.TrafficLight.Light.YELLOW;
 
 import java.awt.event.KeyEvent;
 
 import de.amr.easy.game.input.Keyboard;
 import de.amr.statemachine.core.StateMachine;
-import de.amr.statemachine.samples.ampel.TrafficLight.Light;
+import de.amr.statemachine.samples.trafficlight.TrafficLight.Light;
 
 /**
  * A simple traffic light.
