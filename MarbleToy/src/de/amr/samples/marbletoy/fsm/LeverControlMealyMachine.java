@@ -11,7 +11,7 @@ import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.RRR
 
 import java.util.function.Consumer;
 
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class LeverControlMealyMachine {
@@ -27,7 +27,7 @@ public class LeverControlMealyMachine {
 
 	public LeverControlMealyMachine() {
 		//@formatter:off
-		fsm = StateMachine.beginStateMachine(ToyState.class, Character.class, EventMatchStrategy.BY_EQUALITY)
+		fsm = StateMachine.beginStateMachine(ToyState.class, Character.class, TransitionMatchStrategy.BY_VALUE)
 				.description("Marble-Toy (Mealy)")
 				.initialState(ToyState.LLL)
 				

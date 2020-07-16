@@ -12,7 +12,7 @@ import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.view.View;
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 /**
@@ -41,7 +41,7 @@ public class Markise extends Entity implements View, Lifecycle {
 		// Steuerung
 
 		//@formatter:off
-		automat = StateMachine.beginStateMachine(String.class, String.class, EventMatchStrategy.BY_EQUALITY)
+		automat = StateMachine.beginStateMachine(String.class, String.class, TransitionMatchStrategy.BY_VALUE)
 			.description("MarkisenSteuerung")
 			.initialState("Eingefahren")
 

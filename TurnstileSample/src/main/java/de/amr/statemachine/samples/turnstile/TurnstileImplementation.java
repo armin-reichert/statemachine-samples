@@ -5,7 +5,7 @@ import static de.amr.statemachine.samples.turnstile.TurnstileEvent.PASS;
 import static de.amr.statemachine.samples.turnstile.TurnstileState.LOCKED;
 import static de.amr.statemachine.samples.turnstile.TurnstileState.UNLOCKED;
 
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 /**
@@ -23,7 +23,7 @@ public class TurnstileImplementation extends StateMachine<TurnstileState, Turnst
 	}
 
 	public TurnstileImplementation(TurnstileController c) {
-		super(TurnstileState.class, EventMatchStrategy.BY_EQUALITY);
+		super(TurnstileState.class, TransitionMatchStrategy.BY_VALUE);
 		controller = c;
 		//@formatter:off
 		beginStateMachine()

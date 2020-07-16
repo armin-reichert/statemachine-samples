@@ -8,7 +8,7 @@ import static de.amr.statemachine.samples.door.DoorController.DoorState.CLOSED;
 import static de.amr.statemachine.samples.door.DoorController.DoorState.LOCKED;
 import static de.amr.statemachine.samples.door.DoorController.DoorState.OPEN;
 
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 import de.amr.statemachine.samples.door.DoorController.DoorEvent;
 import de.amr.statemachine.samples.door.DoorController.DoorState;
@@ -24,7 +24,7 @@ public class DoorController extends StateMachine<DoorState, DoorEvent> {
 	}
 
 	public DoorController() {
-		super(DoorState.class, EventMatchStrategy.BY_EQUALITY);
+		super(DoorState.class, TransitionMatchStrategy.BY_VALUE);
 		//@formatter:off
 		beginStateMachine()
 			.initialState(LOCKED)

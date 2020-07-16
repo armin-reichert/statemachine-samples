@@ -1,6 +1,6 @@
 package de.amr.schule.mathebiber2012;
 
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 /**
@@ -17,7 +17,7 @@ public class Bebrocarina extends StateMachine<Integer, Character> {
 	}
 
 	public Bebrocarina() {
-		super(Integer.class, EventMatchStrategy.BY_EQUALITY);
+		super(Integer.class, TransitionMatchStrategy.BY_VALUE);
 		//@formatter:off
 		beginStateMachine()
 			.description("Bebrocarina")

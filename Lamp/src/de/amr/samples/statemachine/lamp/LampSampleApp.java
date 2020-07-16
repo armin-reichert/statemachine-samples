@@ -6,7 +6,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class LampSampleApp {
@@ -24,7 +24,7 @@ public class LampSampleApp {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		StateMachine<Boolean, Boolean> controller = StateMachine.beginStateMachine(Boolean.class, Boolean.class, EventMatchStrategy.BY_EQUALITY)
+		StateMachine<Boolean, Boolean> controller = StateMachine.beginStateMachine(Boolean.class, Boolean.class, TransitionMatchStrategy.BY_VALUE)
 		//@formatter:off
 			.initialState(false)
 			.states().state(false).state(true)

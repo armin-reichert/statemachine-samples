@@ -13,7 +13,7 @@ import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.input.Mouse;
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class Waeschetrockner implements Lifecycle {
@@ -35,7 +35,7 @@ public class Waeschetrockner implements Lifecycle {
 		// Steuerung
 
 		//@formatter:off
-		steuerung = StateMachine.beginStateMachine(String.class, String.class, EventMatchStrategy.BY_EQUALITY)
+		steuerung = StateMachine.beginStateMachine(String.class, String.class, TransitionMatchStrategy.BY_VALUE)
 			.description("Trockner")
 			.initialState("Aus")
 		
@@ -62,7 +62,7 @@ public class Waeschetrockner implements Lifecycle {
 	
 		.endStateMachine();
 
-		tür = StateMachine.beginStateMachine(String.class, String.class, EventMatchStrategy.BY_EQUALITY)
+		tür = StateMachine.beginStateMachine(String.class, String.class, TransitionMatchStrategy.BY_VALUE)
 				.description("Tür")
 				.initialState("Zu")
 				
@@ -78,7 +78,7 @@ public class Waeschetrockner implements Lifecycle {
 		
 		.endStateMachine();
 
-		zeitwahl = StateMachine.beginStateMachine(Integer.class, String.class, EventMatchStrategy.BY_EQUALITY)
+		zeitwahl = StateMachine.beginStateMachine(Integer.class, String.class, TransitionMatchStrategy.BY_VALUE)
 			.description("Zeitwahl")
 			.initialState(15)
 

@@ -19,7 +19,7 @@ import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.input.Keyboard;
 import de.amr.easy.game.view.View;
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class Garagentor extends Entity implements View, Lifecycle {
@@ -39,7 +39,7 @@ public class Garagentor extends Entity implements View, Lifecycle {
 
 	public Garagentor() {
 		//@formatter:off
-		steuerung = StateMachine.beginStateMachine(TorZustand.class, TorEreignis.class, EventMatchStrategy.BY_EQUALITY)
+		steuerung = StateMachine.beginStateMachine(TorZustand.class, TorEreignis.class, TransitionMatchStrategy.BY_VALUE)
 				.description("Garagentor Steuerung")
 				.initialState(GESCHLOSSEN)
 

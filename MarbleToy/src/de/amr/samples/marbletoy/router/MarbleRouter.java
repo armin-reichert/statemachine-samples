@@ -17,7 +17,7 @@ import static de.amr.samples.marbletoy.router.RoutingPoint.X3;
 
 import de.amr.easy.game.math.Vector2f;
 import de.amr.samples.marbletoy.entities.MarbleToy;
-import de.amr.statemachine.api.EventMatchStrategy;
+import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 
 public class MarbleRouter {
@@ -30,7 +30,7 @@ public class MarbleRouter {
 	public MarbleRouter(MarbleToy toy) {
 		this.toy = toy;
 		//@formatter:off
-		fsm = StateMachine.beginStateMachine(RoutingPoint.class, Character.class, EventMatchStrategy.BY_EQUALITY)
+		fsm = StateMachine.beginStateMachine(RoutingPoint.class, Character.class, TransitionMatchStrategy.BY_VALUE)
 				
 				.description("Marble Router")
 				.initialState(RoutingPoint.Initial)
