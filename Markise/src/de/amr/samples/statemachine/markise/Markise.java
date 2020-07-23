@@ -1,6 +1,5 @@
 package de.amr.samples.statemachine.markise;
 
-import static de.amr.easy.game.Application.LOGGER;
 import static java.lang.String.format;
 
 import java.awt.Color;
@@ -113,7 +112,6 @@ public class Markise extends Entity implements View, Lifecycle {
 
 		.endStateMachine();
 		//@formatter:on
-		automat.getTracer().setLogger(LOGGER);
 	}
 
 	public void raiseEvent(String event) {
@@ -157,8 +155,8 @@ public class Markise extends Entity implements View, Lifecycle {
 		g.translate(tf.x, tf.y + 80);
 		g.setFont(new Font("Monospaced", Font.BOLD, 16));
 		g.drawString(format("Wetter: %s %s  Geschw: %.1f  Position: %d%%  Zustand: %s",
-				regenSensor.esRegnet() ? "Regen" : "Sonnenschein", windSensor.windig() ? "Windig" : "Windstill",
-				tf.vx, position, automat.getState()), 0, 0);
+				regenSensor.esRegnet() ? "Regen" : "Sonnenschein", windSensor.windig() ? "Windig" : "Windstill", tf.vx,
+				position, automat.getState()), 0, 0);
 		g.translate(-tf.x, -(tf.y + 80));
 	}
 }

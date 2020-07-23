@@ -1,6 +1,5 @@
 package de.amr.samples.marbletoy.entities;
 
-import static de.amr.easy.game.Application.LOGGER;
 import static de.amr.samples.marbletoy.router.RoutingPoint.C;
 import static de.amr.samples.marbletoy.router.RoutingPoint.D;
 import static de.amr.samples.marbletoy.router.RoutingPoint.E;
@@ -45,12 +44,10 @@ public class MarbleToy extends Entity implements Lifecycle, View {
 		levers[1] = new Lever(424, 82);
 		levers[2] = new Lever(301, 204);
 		router = new MarbleRouter(this);
-		router.getFsm().getTracer().setLogger(LOGGER);
 	}
 
 	public void setLeverControl(LeverControl leverControl) {
 		this.leverControl = leverControl;
-		leverControl.getFsm().getTracer().setLogger(LOGGER);
 	}
 
 	@Override
