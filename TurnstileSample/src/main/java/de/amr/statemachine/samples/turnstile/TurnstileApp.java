@@ -3,6 +3,8 @@ package de.amr.statemachine.samples.turnstile;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+import de.amr.statemachine.dot.DotPrinter;
+
 public class TurnstileApp {
 
 	private static Random rand = new Random();
@@ -32,5 +34,8 @@ public class TurnstileApp {
 			t.event(event);
 			System.out.println("->" + t.getState());
 		});
+		
+		DotPrinter dot = new DotPrinter();
+		dot.print(t);
 	}
 }
