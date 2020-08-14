@@ -35,7 +35,7 @@ public class TurnstileApp {
 			System.out.println("->" + t.getState());
 		});
 		
-		DotPrinter dot = new DotPrinter();
-		dot.print(t);
+		String dot = DotPrinter.toDotFormat(t);
+		System.out.println(dot);
 	}
 }
