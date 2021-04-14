@@ -1,6 +1,5 @@
 package de.amr.schule.trockner;
 
-import static de.amr.easy.game.Application.LOGGER;
 import static de.amr.easy.game.Application.app;
 
 import java.awt.Rectangle;
@@ -47,14 +46,14 @@ public class Waeschetrockner implements Lifecycle {
 		.transitions()
 			.when("Aus").then("Bereit").on("EinAusTaste")
 			.when("Aus").then("Läuft").on("StartTaste").condition(() -> tür.getState().equals("Zu"))
-			.stay("Aus").on("StartTaste").act(() -> LOGGER.info("Bitte Tür schließen"))
+			.stay("Aus").on("StartTaste").act(() -> app().getLogger().loginfo("Bitte Tür schließen"))
 			.stay("Aus").on("TürAuf")
 			
 			.when("Bereit").then("Aus").on("EinAusTaste")
 			.when("Bereit").then("Läuft").on("StartTaste").condition(() -> tür.getState().equals("Zu"))
 			.when("Bereit").then("Aus").on("TürAuf")
 			.stay("Bereit").on("StartTaste").condition(() -> tür.getState().equals("Auf"))
-				.act(() -> LOGGER.info("Bitte Tür schließen"))
+				.act(() -> app().getLogger().loginfo("Bitte Tür schließen"))
 			
 			.when("Läuft").then("Aus").on("EinAusTaste").act(() -> tür.process("TürAuf"))
 			.when("Läuft").then("Aus").on("TürAuf")
