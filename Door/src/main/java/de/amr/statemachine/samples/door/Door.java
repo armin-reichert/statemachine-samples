@@ -1,5 +1,6 @@
 package de.amr.statemachine.samples.door;
 
+import de.amr.statemachine.api.Log;
 import de.amr.statemachine.core.StateMachine.MissingTransitionBehavior;
 import de.amr.statemachine.samples.door.DoorController.DoorEvent;
 
@@ -19,6 +20,22 @@ public class Door {
 	DoorController state = new DoorController();
 
 	public Door() {
+		state.getTracer().setLogger(new Log() {
+			
+			@Override
+			public void shutUp(boolean shutUp) {
+			}
+			
+			@Override
+			public void loginfo(String messageFormat, Object... args) {
+				System.out.println(String.format(messageFormat, args));
+			}
+			
+			@Override
+			public boolean isShutUp() {
+				return false;
+			}
+		});
 		state.setMissingTransitionBehavior(MissingTransitionBehavior.LOG);
 		state.init();
 	}
