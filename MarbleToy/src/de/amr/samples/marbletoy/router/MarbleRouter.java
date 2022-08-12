@@ -1,7 +1,5 @@
 package de.amr.samples.marbletoy.router;
 
-import static de.amr.easy.game.math.Vector2f.diff;
-import static de.amr.easy.game.math.Vector2f.smul;
 import static de.amr.samples.marbletoy.router.RoutingPoint.A;
 import static de.amr.samples.marbletoy.router.RoutingPoint.B;
 import static de.amr.samples.marbletoy.router.RoutingPoint.C;
@@ -15,7 +13,7 @@ import static de.amr.samples.marbletoy.router.RoutingPoint.X1;
 import static de.amr.samples.marbletoy.router.RoutingPoint.X2;
 import static de.amr.samples.marbletoy.router.RoutingPoint.X3;
 
-import de.amr.easy.game.math.Vector2f;
+import de.amr.easy.game.math.V2f;
 import de.amr.samples.marbletoy.entities.MarbleToy;
 import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
@@ -68,29 +66,28 @@ public class MarbleRouter {
 		.endStateMachine();
 		//@formatter:on
 	}
-	
+
 	public StateMachine<RoutingPoint, Character> getFsm() {
 		return fsm;
 	}
 
 	private void placeMarbleCenteredAt(RoutingPoint p) {
-		toy.getMarble().tf.setPosition(p.getLocation().x - toy.getMarble().tf.width / 2,
-				p.getLocation().y - toy.getMarble().tf.height / 2);
+		toy.getMarble().tf.setPosition(p.getLocation().x() - toy.getMarble().tf.width / 2,
+				p.getLocation().y() - toy.getMarble().tf.height / 2);
 	}
 
 	private void routeMarble(RoutingPoint from, RoutingPoint to) {
 		placeMarbleCenteredAt(from);
-		toy.getMarble().tf
-				.setVelocity(smul(MARBLE_SPEED, diff(to.getLocation(), from.getLocation()).normalized()));
+		toy.getMarble().tf.setVelocity(V2f.smul(MARBLE_SPEED, V2f.diff(to.getLocation(), from.getLocation()).normalized()));
 	}
 
 	private boolean isMarbleAtLever(int leverIndex) {
-		Vector2f pos = toy.getLever(leverIndex).tf.getCenter();
+		V2f pos = toy.getLever(leverIndex).tf.getCenter();
 		return toy.getMarble().getCollisionBox().contains(pos.roundedX(), pos.roundedY());
 	}
 
 	private boolean isMarbleAt(RoutingPoint point) {
-		Vector2f pos = point.getLocation();
+		V2f pos = point.getLocation();
 		return toy.getMarble().getCollisionBox().contains(pos.roundedX(), pos.roundedY());
 	}
 }
