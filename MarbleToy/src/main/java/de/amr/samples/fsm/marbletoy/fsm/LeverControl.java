@@ -1,23 +1,23 @@
-package de.amr.samples.marbletoy.fsm;
+package de.amr.samples.fsm.marbletoy.fsm;
 
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LLL;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LLL_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LLR;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LLR_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LRL;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LRL_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LRR;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.LRR_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RLL;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RLL_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RLR;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RLR_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRL;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRL_D;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRR;
-import static de.amr.samples.marbletoy.fsm.LeverControl.ToyState.RRR_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LLL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LLL_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LLR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LLR_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LRL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LRL_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LRR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.LRR_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RLL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RLL_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RLR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RLR_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RRL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RRL_D;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RRR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControl.ToyState.RRR_D;
 
-import de.amr.samples.marbletoy.entities.MarbleToy;
+import de.amr.samples.fsm.marbletoy.entities.MarbleToy;
 import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 

@@ -1,13 +1,13 @@
-package de.amr.samples.marbletoy.fsm;
+package de.amr.samples.fsm.marbletoy.fsm;
 
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.LLL;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.LLR;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.LRL;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.LRR;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.RLL;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.RLR;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.RRL;
-import static de.amr.samples.marbletoy.fsm.LeverControlMealyMachine.ToyState.RRR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.LLL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.LLR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.LRL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.LRR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.RLL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.RLR;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.RRL;
+import static de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine.ToyState.RRR;
 
 import java.util.function.Consumer;
 

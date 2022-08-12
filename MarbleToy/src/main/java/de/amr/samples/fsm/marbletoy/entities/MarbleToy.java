@@ -1,12 +1,12 @@
-package de.amr.samples.marbletoy.entities;
+package de.amr.samples.fsm.marbletoy.entities;
 
-import static de.amr.samples.marbletoy.router.RoutingPoint.C;
-import static de.amr.samples.marbletoy.router.RoutingPoint.D;
-import static de.amr.samples.marbletoy.router.RoutingPoint.E;
-import static de.amr.samples.marbletoy.router.RoutingPoint.F;
-import static de.amr.samples.marbletoy.router.RoutingPoint.G;
-import static de.amr.samples.marbletoy.router.RoutingPoint.H;
-import static de.amr.samples.marbletoy.router.RoutingPoint.Initial;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.C;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.D;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.E;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.F;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.G;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.H;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.Initial;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -21,9 +21,9 @@ import de.amr.easy.game.assets.Assets;
 import de.amr.easy.game.controller.Lifecycle;
 import de.amr.easy.game.entity.Entity;
 import de.amr.easy.game.view.View;
-import de.amr.samples.marbletoy.fsm.LeverControl;
-import de.amr.samples.marbletoy.router.MarbleRouter;
-import de.amr.samples.marbletoy.router.RoutingPoint;
+import de.amr.samples.fsm.marbletoy.fsm.LeverControl;
+import de.amr.samples.fsm.marbletoy.router.MarbleRouter;
+import de.amr.samples.fsm.marbletoy.router.RoutingPoint;
 
 public class MarbleToy extends Entity implements Lifecycle, View {
 

@@ -1,4 +1,4 @@
-package de.amr.samples.marbletoy.entities;
+package de.amr.samples.fsm.marbletoy.entities;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

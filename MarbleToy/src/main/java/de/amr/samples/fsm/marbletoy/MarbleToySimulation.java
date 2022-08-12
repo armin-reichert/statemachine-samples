@@ -1,9 +1,9 @@
-package de.amr.samples.marbletoy;
+package de.amr.samples.fsm.marbletoy;
 
 import de.amr.easy.game.Application;
 import de.amr.easy.game.config.AppSettings;
-import de.amr.samples.marbletoy.entities.MarbleToy;
-import de.amr.samples.marbletoy.fsm.LeverControl;
+import de.amr.samples.fsm.marbletoy.entities.MarbleToy;
+import de.amr.samples.fsm.marbletoy.fsm.LeverControl;
 
 public class MarbleToySimulation extends Application {
 

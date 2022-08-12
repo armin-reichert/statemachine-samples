@@ -1,20 +1,20 @@
-package de.amr.samples.marbletoy.router;
+package de.amr.samples.fsm.marbletoy.router;
 
-import static de.amr.samples.marbletoy.router.RoutingPoint.A;
-import static de.amr.samples.marbletoy.router.RoutingPoint.B;
-import static de.amr.samples.marbletoy.router.RoutingPoint.C;
-import static de.amr.samples.marbletoy.router.RoutingPoint.D;
-import static de.amr.samples.marbletoy.router.RoutingPoint.E;
-import static de.amr.samples.marbletoy.router.RoutingPoint.F;
-import static de.amr.samples.marbletoy.router.RoutingPoint.G;
-import static de.amr.samples.marbletoy.router.RoutingPoint.H;
-import static de.amr.samples.marbletoy.router.RoutingPoint.Initial;
-import static de.amr.samples.marbletoy.router.RoutingPoint.X1;
-import static de.amr.samples.marbletoy.router.RoutingPoint.X2;
-import static de.amr.samples.marbletoy.router.RoutingPoint.X3;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.A;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.B;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.C;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.D;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.E;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.F;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.G;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.H;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.Initial;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.X1;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.X2;
+import static de.amr.samples.fsm.marbletoy.router.RoutingPoint.X3;
 
 import de.amr.easy.game.math.V2f;
-import de.amr.samples.marbletoy.entities.MarbleToy;
+import de.amr.samples.fsm.marbletoy.entities.MarbleToy;
 import de.amr.statemachine.api.TransitionMatchStrategy;
 import de.amr.statemachine.core.StateMachine;
 

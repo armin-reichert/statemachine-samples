@@ -1,13 +1,13 @@
-package de.amr.samples.marbletoy;
+package de.amr.samples.fsm.marbletoy;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import de.amr.samples.marbletoy.entities.MarbleToy;
-import de.amr.samples.marbletoy.fsm.LeverControl;
-import de.amr.samples.marbletoy.fsm.LeverControlMealyMachine;
+import de.amr.samples.fsm.marbletoy.entities.MarbleToy;
+import de.amr.samples.fsm.marbletoy.fsm.LeverControl;
+import de.amr.samples.fsm.marbletoy.fsm.LeverControlMealyMachine;
 
 /**
  * Exercise 2.3 from Hopcroft/Ullman: "Introduction to Automata Theory, Languages and Computation".

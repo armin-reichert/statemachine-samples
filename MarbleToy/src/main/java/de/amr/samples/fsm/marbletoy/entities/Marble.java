@@ -1,4 +1,4 @@
-package de.amr.samples.marbletoy.entities;
+package de.amr.samples.fsm.marbletoy.entities;
 
 import static de.amr.easy.game.assets.Assets.image;
 import static de.amr.easy.game.assets.Assets.scaledImage;

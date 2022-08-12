@@ -1,4 +1,4 @@
-package de.amr.samples.marbletoy.router;
+package de.amr.samples.fsm.marbletoy.router;
 
 import de.amr.easy.game.math.V2f;
 
